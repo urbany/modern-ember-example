@@ -22,7 +22,7 @@
     "lint:hbs:fix": "ember-template-lint . --fix",
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
-    "lint:types": "glint",
+    "lint:types": "ember-tsc",
     "start": "vite",
     "test": "vite build --mode development && testem ci"
   },
@@ -49,10 +49,10 @@
     "@embroider/vite": "^1.2.0",
     "@eslint/js": "^9.34.0",
     "@glimmer/component": "^2.0.0",
-    "@glint/core": "^1.5.2",
-    "@glint/environment-ember-loose": "^1.5.2",
-    "@glint/environment-ember-template-imports": "^1.5.2",
-    "@glint/template": "^1.5.2",
+    "@glint/core": "^2.0.1-unstable",
+    "@glint/ember-tsc": "^1.0.3",
+    "@glint/template": "^1.6.1",
+    "@glint/tsserver-plugin": "^2.0.3",
     "@rollup/plugin-babel": "^6.0.4",
     "@tailwindcss/vite": "^4.1.14",
     "@types/qunit": "^2.19.13",
@@ -77,10 +77,12 @@
     "eslint-plugin-n": "^17.21.3",
     "eslint-plugin-qunit": "^8.2.5",
     "globals": "^16.3.0",
+    "lint-staged": "^16.2.3",
     "prettier": "^3.6.2",
     "prettier-plugin-ember-template-tag": "^2.1.0",
     "qunit": "^2.24.1",
     "qunit-dom": "^3.5.0",
+    "simple-git-hooks": "^2.13.1",
     "stylelint": "^16.23.1",
     "stylelint-config-standard": "^39.0.1",
     "tailwindcss": "^4.1.14",
@@ -95,5 +97,23 @@
   },
   "ember": {
     "edition": "octane"
-  }
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm dlx lint-staged"
+  },
+  "lint-staged": {
+    "**/*.{js,ts}": [
+      "eslint --fix --quiet --report-unused-disable-directives",
+      "prettier --write"
+    ],
+    "**/*.{gjs,gts}": [
+      "eslint --fix --quiet --report-unused-disable-directives",
+      "prettier --write"
+    ],
+    "**/*.css": [
+      "stylelint --fix",
+      "prettier --write"
+    ]
+  },
+  "packageManager": "pnpm@10.11.0+sha512.6540583f41cc5f628eb3d9773ecee802f4f9ef9923cc45b69890fb47991d4b092964694ec3a4f738a420c918a333062c8b925d312f42e4f0c263eb603551f977"
 }
