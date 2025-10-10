@@ -1,5 +1,4 @@
 import { pageTitle } from 'ember-page-title';
-import { WelcomePage } from 'ember-welcome-page';
 
 <template>
   {{pageTitle "Id"}}
@@ -7,6 +6,10 @@ import { WelcomePage } from 'ember-welcome-page';
   {{outlet}}
 
   {{! The following component displays Ember's default welcome message. }}
-  <WelcomePage />
+  <div
+    class="text-3xl font-bold underline bg-red-500 mx-auto w-md rounded-2xl p-4 mt-4 text-center"
+  >
+    Tailwind is working!
+  </div>
   {{! Feel free to remove this! }}
 </template>
