@@ -5,10 +5,17 @@ import loadInitializers from 'ember-load-initializers';
 import config from 'id/config/environment';
 import { importSync, isDevelopingApp, macroCondition } from '@embroider/macros';
 import setupInspector from '@embroider/legacy-inspector-support/ember-source-4.12';
+import '@warp-drive/ember/install';
+import { setBuildURLConfig } from '@warp-drive/utilities';
 
 if (macroCondition(isDevelopingApp())) {
   importSync('./deprecation-workflow');
 }
+
+setBuildURLConfig({
+  host: null,
+  namespace: 'api',
+});
 
 export default class App extends Application {
   modulePrefix = config.modulePrefix;

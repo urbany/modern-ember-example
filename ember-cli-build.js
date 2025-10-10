@@ -5,6 +5,8 @@ const { compatBuild } = require('@embroider/compat');
 
 module.exports = async function (defaults) {
   const { buildOnce } = await import('@embroider/vite');
+  const { setConfig } = await import('@warp-drive/build-config');
+
   let app = new EmberApp(defaults, {
     emberData: {
       deprecations: {
@@ -16,6 +18,12 @@ module.exports = async function (defaults) {
       },
     },
     // Add options here
+  });
+
+  setConfig(app, __dirname, {
+    deprecations: {
+      DEPRECATE_TRACKING_PACKAGE: false,
+    },
   });
 
   return compatBuild(app, buildOnce);

@@ -3,7 +3,7 @@ import Service from 'ember-simple-auth/services/session';
 type Data = {
   authenticated: {
     // Any data your authenticators return
-    id: string;
+    accessToken: string;
   };
 };
 
