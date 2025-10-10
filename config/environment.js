@@ -2,7 +2,7 @@
 
 module.exports = function (environment) {
   const ENV = {
-    modulePrefix: 'id',
+    modulePrefix: 'modern-ember-example',
     environment,
     rootURL: '/',
     locationType: 'history',

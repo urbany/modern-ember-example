@@ -1,8 +1,8 @@
 {
-  "name": "id",
+  "name": "modern-ember-example",
   "version": "0.0.0",
   "private": true,
-  "description": "Small description for id goes here",
+  "description": "A modern example Ember app using Warp Drive and TypeScript",
   "repository": "",
   "license": "MIT",
   "author": "",

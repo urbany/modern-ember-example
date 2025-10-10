@@ -4,8 +4,8 @@
   "compilerOptions": {
     "allowJs": true,
     "paths": {
-      "id/tests/*": ["./tests/*"],
-      "id/*": ["./app/*"],
+      "modern-ember-example/tests/*": ["./tests/*"],
+      "modern-ember-example/*": ["./app/*"],
       "*": ["./types/*"]
     },
     "types": [

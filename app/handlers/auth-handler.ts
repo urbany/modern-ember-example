@@ -1,7 +1,7 @@
 import { service } from '@ember/service';
 import type { RequestContext } from '@warp-drive/core/types/request';
 import type { NextFn, Handler } from '@warp-drive/core/request';
-import type SessionService from 'id/services/session';
+import type SessionService from '../services/session';
 
 export default class AuthHandler implements Handler {
   @service declare session: SessionService;

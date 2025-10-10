@@ -1,5 +1,5 @@
-import Application from 'id/app';
-import config from 'id/config/environment';
+import Application from 'modern-ember-example/app';
+import config from 'modern-ember-example/config/environment';
 import * as QUnit from 'qunit';
 import { setApplication } from '@ember/test-helpers';
 import { setup } from 'qunit-dom';

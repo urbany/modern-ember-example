@@ -1,5 +1,5 @@
 import EmberRouter from '@embroider/router';
-import config from 'id/config/environment';
+import config from 'modern-ember-example/config/environment';
 
 export default class Router extends EmberRouter {
   location = config.locationType;
