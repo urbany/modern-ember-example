@@ -25,7 +25,7 @@ You will need the following things properly installed on your computer.
 ## Installation
 
 - `git clone <repository-url>` this repository
-- `cd id`
+- `cd modern-ember-example`
 - `pnpm install`
 
 ## Running / Development
@@ -84,28 +84,35 @@ The application uses WarpDrive (EmberData 5.x) with a modular architecture:
 ## Further Reading / Useful Links
 
 ### Ember Core
+
 - [Ember.js](https://emberjs.com/)
 - [Ember CLI](https://cli.emberjs.com/release/)
 - [Ember Guides](https://guides.emberjs.com/)
 
 ### Build Tools
+
 - [Embroider](https://github.com/embroider-build/embroider) - Modern build system for Ember
 - [Vite](https://vite.dev/) - Next generation frontend tooling
 
 ### Data Management
+
 - [WarpDrive Documentation](https://github.com/emberjs/data/blob/main/guides/index.md)
 - [JSON:API Specification](https://jsonapi.org/)
 
 ### TypeScript & Type Safety
+
 - [Glint](https://typed-ember.gitbook.io/glint) - Template type-checking
 - [TypeScript Handbook](https://www.typescriptlang.org/docs/)
 
 ### Styling
+
 - [Tailwind CSS](https://tailwindcss.com/docs)
 
 ### Authentication
+
 - [ember-simple-auth](https://ember-simple-auth.com/)
 
 ### Browser Extensions
+
 - [Ember Inspector for Chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
 - [Ember Inspector for Firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
