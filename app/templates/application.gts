@@ -19,7 +19,7 @@ import LucideIcon from 'modern-ember-example/components/lucide-icon';
             Vite, and Tailwind CSS.
           </p>
           <div class="flex gap-4 justify-center">
-            <button class="btn btn-primary">
+            <button type="button" class="btn btn-primary">
               <LucideIcon @name="Rocket" @class="w-5 h-5" />
               Get Started
             </button>
