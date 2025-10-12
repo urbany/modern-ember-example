@@ -4,7 +4,7 @@ module.exports = function (environment) {
   const ENV = {
     modulePrefix: 'modern-ember-example',
     environment,
-    rootURL: '/',
+    rootURL: process.env.VITE_BASE_PATH || '/',
     locationType: 'history',
     EmberENV: {
       EXTEND_PROTOTYPES: false,

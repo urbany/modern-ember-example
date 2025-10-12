@@ -4,6 +4,8 @@ import { babel } from '@rollup/plugin-babel';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
+  // Use base path from environment variable for GitHub Pages deployment
+  base: process.env.VITE_BASE_PATH || '/',
   plugins: [
     classicEmberSupport(),
     ember(),
