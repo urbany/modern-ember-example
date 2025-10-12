@@ -195,8 +195,13 @@ export const UserSchema = withDefaults({
   type: 'user',
   fields: [
     { name: 'name', kind: 'attribute', type: 'string' },
-    { name: 'createdAt', kind: 'attribute', type: 'date', sourceKey: 'created-at' }
-  ]
+    {
+      name: 'createdAt',
+      kind: 'attribute',
+      type: 'date',
+      sourceKey: 'created-at',
+    },
+  ],
 });
 ```
 

@@ -15,6 +15,10 @@
 /testem.log
 /yarn-error.log
 
+# environment variables
+.env
+.env.local
+
 # ember-try
 /.node_modules.ember-try/
 /npm-shrinkwrap.json.ember-try
