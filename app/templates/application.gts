@@ -1,5 +1,6 @@
 import { pageTitle } from 'ember-page-title';
 import LucideIcon from 'modern-ember-example/components/lucide-icon';
+import GettingStartedCode from 'modern-ember-example/components/getting-started-code';
 
 <template>
   {{pageTitle "Modern Ember Example"}}
@@ -19,10 +20,10 @@ import LucideIcon from 'modern-ember-example/components/lucide-icon';
             Vite, and Tailwind CSS.
           </p>
           <div class="flex gap-4 justify-center">
-            <button type="button" class="btn btn-primary">
+            <a href="#getting-started" class="btn btn-primary">
               <LucideIcon @name="Rocket" @class="w-5 h-5" />
               Get Started
-            </button>
+            </a>
             <a
               href="https://github.com/urbany/modern-ember-example"
               target="_blank"
@@ -43,19 +44,33 @@ import LucideIcon from 'modern-ember-example/components/lucide-icon';
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {{! Ember.js Card }}
-        <div class="card bg-base-100 shadow-xl">
+        <a
+          href="https://emberjs.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="card bg-base-100 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+        >
           <div class="card-body">
             <div class="flex items-center gap-3 mb-4">
-              <LucideIcon @name="Flame" @class="w-8 h-8 text-primary" />
+              <img
+                src="https://emberjs.com/images/brand/ember-e-circle-icon-4c.svg"
+                alt="Ember.js"
+                class="w-8 h-8"
+              />
               <h3 class="card-title">Ember.js 6.7</h3>
             </div>
             <p>Octane edition with modern component model, auto-tracking, and
               native JavaScript classes.</p>
           </div>
-        </div>
+        </a>
 
         {{! TypeScript Card }}
-        <div class="card bg-base-100 shadow-xl">
+        <a
+          href="https://typed-ember.gitbook.io/glint"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="card bg-base-100 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+        >
           <div class="card-body">
             <div class="flex items-center gap-3 mb-4">
               <LucideIcon @name="FileCode" @class="w-8 h-8 text-secondary" />
@@ -64,10 +79,15 @@ import LucideIcon from 'modern-ember-example/components/lucide-icon';
             <p>Full type safety with Glint v2 providing type-checking for
               templates in .gts files.</p>
           </div>
-        </div>
+        </a>
 
         {{! Vite Card }}
-        <div class="card bg-base-100 shadow-xl">
+        <a
+          href="https://github.com/embroider-build/embroider"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="card bg-base-100 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+        >
           <div class="card-body">
             <div class="flex items-center gap-3 mb-4">
               <LucideIcon @name="Zap" @class="w-8 h-8 text-accent" />
@@ -76,10 +96,15 @@ import LucideIcon from 'modern-ember-example/components/lucide-icon';
             <p>Lightning-fast dev server and optimized production builds with
               modern bundling.</p>
           </div>
-        </div>
+        </a>
 
         {{! Tailwind Card }}
-        <div class="card bg-base-100 shadow-xl">
+        <a
+          href="https://tailwindcss.com/docs"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="card bg-base-100 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+        >
           <div class="card-body">
             <div class="flex items-center gap-3 mb-4">
               <LucideIcon @name="Palette" @class="w-8 h-8 text-info" />
@@ -88,22 +113,35 @@ import LucideIcon from 'modern-ember-example/components/lucide-icon';
             <p>Utility-first CSS framework with daisyUI components for rapid UI
               development.</p>
           </div>
-        </div>
+        </a>
 
         {{! WarpDrive Card }}
-        <div class="card bg-base-100 shadow-xl">
+        <a
+          href="https://warp-drive.io/guides/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="card bg-base-100 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+        >
           <div class="card-body">
             <div class="flex items-center gap-3 mb-4">
-              <LucideIcon @name="Database" @class="w-8 h-8 text-success" />
+              <img
+                src="https://canary.warp-drive.io/logos/warp-drive/logo-yellow-slab.svg"
+                alt="WarpDrive"
+                class="h-8"
+              />
               <h3 class="card-title">WarpDrive</h3>
             </div>
-            <p>Modern data layer (EmberData 5.x) with JSON:API support and
-              request handlers.</p>
+            <p>Modern data layer with JSON:API support and request handlers.</p>
           </div>
-        </div>
+        </a>
 
         {{! Auth Card }}
-        <div class="card bg-base-100 shadow-xl">
+        <a
+          href="https://ember-simple-auth.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="card bg-base-100 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+        >
           <div class="card-body">
             <div class="flex items-center gap-3 mb-4">
               <LucideIcon @name="Shield" @class="w-8 h-8 text-warning" />
@@ -112,7 +150,7 @@ import LucideIcon from 'modern-ember-example/components/lucide-icon';
             <p>Secure session management with ember-simple-auth and type-safe
               token handling.</p>
           </div>
-        </div>
+        </a>
       </div>
     </div>
 
@@ -179,6 +217,41 @@ import LucideIcon from 'modern-ember-example/components/lucide-icon';
                 Pre-configured linting, formatting, and git hooks for code
                 quality.
               </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{! Getting Started Section }}
+    <div id="getting-started" class="container mx-auto px-4 py-16">
+      <h2 class="text-3xl font-bold text-center mb-12">Getting Started</h2>
+
+      <div class="max-w-3xl mx-auto">
+        <div class="card bg-base-100 shadow-xl">
+          <div class="card-body">
+            <div class="flex items-center gap-3 mb-4">
+              <LucideIcon @name="Terminal" @class="w-6 h-6 text-primary" />
+              <h3 class="card-title">Clone and Run</h3>
+            </div>
+
+            <div class="space-y-4">
+              <p class="text-base-content/80">
+                Get started with this modern Ember.js template in just a few
+                steps:
+              </p>
+
+              <GettingStartedCode />
+
+              <div class="alert alert-info">
+                <LucideIcon @name="Info" @class="w-5 h-5" />
+                <span>
+                  The dev server will start at
+                  <code
+                    class="font-mono font-semibold"
+                  >http://localhost:4200</code>
+                </span>
+              </div>
             </div>
           </div>
         </div>
