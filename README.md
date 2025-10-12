@@ -10,6 +10,8 @@ A modern Ember.js application built with the latest tooling and best practices.
 - **Glint v2** - Template type-checking for `.gts` and `.gjs` files
 - **WarpDrive** (EmberData 5.x) - Modular data management with JSON:API support
 - **Tailwind CSS v4** - Utility-first styling
+- **daisyUI** - Component library built on Tailwind CSS
+- **Lucide Icons** - Modern icon library with custom Glimmer component integration
 - **ember-simple-auth** - Authentication and session management
 
 ## Prerequisites
@@ -107,6 +109,16 @@ The application uses WarpDrive (EmberData 5.x) with a modular architecture:
 ### Styling
 
 - [Tailwind CSS](https://tailwindcss.com/docs)
+- [daisyUI](https://daisyui.com/) - Component library for Tailwind CSS
+
+### Icons
+
+The application uses Lucide Icons integrated via a custom Glimmer component:
+
+- **Usage**: `<LucideIcon @name="icon-name" @class="optional-classes" />`
+- **Component**: `app/components/lucide-icon.gts`
+- **Documentation**: [Lucide Icons](https://lucide.dev/)
+- Supports all icons from the Lucide icon set
 
 ### Authentication
 
