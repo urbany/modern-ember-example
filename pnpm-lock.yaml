@@ -12,8 +12,8 @@ importers:
         specifier: 5.8.0-alpha.41
         version: 5.8.0-alpha.41(@babel/core@7.28.4)(@glint/template@1.6.1)
       '@warp-drive/build-config':
-        specifier: 5.8.0-alpha.41
-        version: 5.8.0-alpha.41(@babel/core@7.28.4)(@glint/template@1.6.1)
+        specifier: 5.8.0-beta.0
+        version: 5.8.0-beta.0(@glint/template@1.6.1)
       '@warp-drive/core':
         specifier: 5.8.0-alpha.41
         version: 5.8.0-alpha.41(@babel/core@7.28.4)(@glint/template@1.6.1)
@@ -1765,6 +1765,9 @@ packages:
 
   '@warp-drive/build-config@5.8.0-alpha.41':
     resolution: {integrity: sha512-Y5aU1sdWS4gA3qSddlJzbGko0pAGSfaLHvj+fXOszaJZAEax9bSjMXSDz2UoMIetrLn/7JPIvZqU86vUusrOhQ==}
+
+  '@warp-drive/build-config@5.8.0-beta.0':
+    resolution: {integrity: sha512-0y0gKlykSafS7/L/R8AyMBrBB9fomw9ZeDneF6oxS+PXt3Msm6BLwy2AK4G2ls/hHiMUlS/zf260O423FQ0khw==}
 
   '@warp-drive/core@5.8.0-alpha.41':
     resolution: {integrity: sha512-Ct7dphMy1MTW9ei/uwsKeGWZnMI8rgx56CM8xs/kSHCXwmeZxp3dFm0mvKarsuA7SMmXrS77D/Hfs7m04cn9AQ==}
@@ -8539,6 +8542,16 @@ snapshots:
       semver: 7.7.3
     transitivePeerDependencies:
       - '@babel/core'
+      - '@glint/template'
+      - supports-color
+
+  '@warp-drive/build-config@5.8.0-beta.0(@glint/template@1.6.1)':
+    dependencies:
+      '@embroider/addon-shim': 1.10.0
+      '@embroider/macros': 1.19.1(@glint/template@1.6.1)
+      babel-import-util: 2.1.1
+      semver: 7.7.3
+    transitivePeerDependencies:
       - '@glint/template'
       - supports-color
 
