@@ -65,7 +65,7 @@
     "@embroider/vite": "^1.2.0",
     "@eslint/js": "^9.34.0",
     "@glimmer/component": "^2.0.0",
-    "@glint/core": "^2.0.1-unstable",
+    "@glint/core": "^2.0.1-unstable.264919e",
     "@glint/ember-tsc": "^1.0.3",
     "@glint/template": "^1.6.1",
     "@glint/tsserver-plugin": "^2.0.3",
