@@ -37,7 +37,9 @@
     "@warp-drive/ember": "5.8.0-alpha.41",
     "@warp-drive/json-api": "5.8.0-alpha.41",
     "@warp-drive/legacy": "5.8.0-alpha.41",
-    "@warp-drive/utilities": "5.8.0-alpha.41"
+    "@warp-drive/utilities": "5.8.0-alpha.41",
+    "daisyui": "^5.2.3",
+    "lucide": "^0.545.0"
   },
   "devDependencies": {
     "@babel/core": "^7.28.3",
@@ -89,7 +91,7 @@
     "eslint-plugin-n": "^17.21.3",
     "eslint-plugin-qunit": "^8.2.5",
     "globals": "^16.3.0",
-    "lint-staged": "^16.2.3",
+    "lint-staged": "^16.2.4",
     "prettier": "^3.6.2",
     "prettier-plugin-ember-template-tag": "^2.1.0",
     "qunit": "^2.24.1",
@@ -97,6 +99,7 @@
     "simple-git-hooks": "^2.13.1",
     "stylelint": "^16.23.1",
     "stylelint-config-standard": "^39.0.1",
+    "stylelint-config-tailwindcss": "^1.0.0",
     "tailwindcss": "^4.1.14",
     "testem": "^3.16.0",
     "tracked-built-ins": "^4.0.0",

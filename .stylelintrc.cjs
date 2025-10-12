@@ -1,8 +1,5 @@
 'use strict';
 
 module.exports = {
-  extends: ['stylelint-config-standard'],
-  rules: {
-    'import-notation': 'string',
-  },
+  extends: ['stylelint-config-standard', 'stylelint-config-tailwindcss'],
 };

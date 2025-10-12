@@ -138,8 +138,19 @@ Located in `config/optional-features.json`:
 ### Styling
 
 - **Tailwind CSS v4** configured via `@tailwindcss/vite` plugin
+- **daisyUI**: Component library built on Tailwind CSS - use daisyUI components whenever possible
+  - Documentation can be searched via Context7 MCP: `resolve-library-id` → `get-library-docs` for daisyUI
+  - Provides pre-built components (buttons, cards, modals, etc.) that follow Tailwind conventions
 - Main stylesheet: `app/styles/app.css` imports Tailwind
 - Stylelint with `stylelint-config-standard`, `import-notation: 'string'`
+
+### Icons
+
+- **Lucide Icons**: Icon library integrated via custom component
+- Usage: `<LucideIcon @name="icon-name" @class="optional-classes" />`
+- Component location: `app/components/lucide-icon.gts`
+- Supports all icons from the lucide icon set
+- Documentation can be searched via Context7 MCP for available icon names
 
 ### Template Linting
 
@@ -227,6 +238,8 @@ Uses **ember-simple-auth** for session management:
 - **ember-modifier**: Modifier support
 - **ember-page-title**: Page title management
 - **Tailwind CSS v4**: Utility-first CSS framework
+- **daisyUI**: Component library for Tailwind CSS
+- **lucide**: Icon library with custom Glimmer component integration
 
 ## Deprecation Handling
 

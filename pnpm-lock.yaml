@@ -29,6 +29,12 @@ importers:
       '@warp-drive/utilities':
         specifier: 5.8.0-alpha.41
         version: 5.8.0-alpha.41(@glint/template@1.6.1)(@warp-drive/core@5.8.0-alpha.41(@babel/core@7.28.4)(@glint/template@1.6.1))
+      daisyui:
+        specifier: ^5.2.3
+        version: 5.2.3
+      lucide:
+        specifier: ^0.545.0
+        version: 0.545.0
     devDependencies:
       '@babel/core':
         specifier: ^7.28.3
@@ -80,7 +86,7 @@ importers:
         version: 3.0.4(@embroider/core@4.2.4(@glint/template@1.6.1))(@glint/template@1.6.1)
       '@embroider/vite':
         specifier: ^1.2.0
-        version: 1.3.2(@embroider/core@4.2.4(@glint/template@1.6.1))(@glint/template@1.6.1)(rollup@4.52.4)(vite@6.3.6(@types/node@24.7.1)(jiti@2.6.1)(lightningcss@1.30.1)(terser@5.44.0)(yaml@2.8.1))
+        version: 1.3.2(@embroider/core@4.2.4(@glint/template@1.6.1))(@glint/template@1.6.1)(rollup@4.52.4)(vite@6.3.6(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(terser@5.44.0)(yaml@2.8.1))
       '@eslint/js':
         specifier: ^9.34.0
         version: 9.37.0
@@ -104,7 +110,7 @@ importers:
         version: 6.0.4(@babel/core@7.28.4)(rollup@4.52.4)
       '@tailwindcss/vite':
         specifier: ^4.1.14
-        version: 4.1.14(vite@6.3.6(@types/node@24.7.1)(jiti@2.6.1)(lightningcss@1.30.1)(terser@5.44.0)(yaml@2.8.1))
+        version: 4.1.14(vite@6.3.6(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(terser@5.44.0)(yaml@2.8.1))
       '@types/qunit':
         specifier: ^2.19.13
         version: 2.19.13
@@ -125,7 +131,7 @@ importers:
         version: 2.11.1(@glint/template@1.6.1)(webpack@5.102.1)
       ember-cli:
         specifier: ^6.6.0
-        version: 6.7.2(@types/node@24.7.1)(handlebars@4.7.8)(underscore@1.13.7)
+        version: 6.7.2(@types/node@24.7.2)(handlebars@4.7.8)(underscore@1.13.7)
       ember-cli-babel:
         specifier: ^8.2.0
         version: 8.2.0(@babel/core@7.28.4)
@@ -178,8 +184,8 @@ importers:
         specifier: ^16.3.0
         version: 16.4.0
       lint-staged:
-        specifier: ^16.2.3
-        version: 16.2.3
+        specifier: ^16.2.4
+        version: 16.2.4
       prettier:
         specifier: ^3.6.2
         version: 3.6.2
@@ -201,6 +207,9 @@ importers:
       stylelint-config-standard:
         specifier: ^39.0.1
         version: 39.0.1(stylelint@16.25.0(typescript@5.9.3))
+      stylelint-config-tailwindcss:
+        specifier: ^1.0.0
+        version: 1.0.0(stylelint@16.25.0(typescript@5.9.3))(tailwindcss@4.1.14)
       tailwindcss:
         specifier: ^4.1.14
         version: 4.1.14
@@ -218,7 +227,7 @@ importers:
         version: 8.46.0(eslint@9.37.0(jiti@2.6.1))(typescript@5.9.3)
       vite:
         specifier: ^6.3.5
-        version: 6.3.6(@types/node@24.7.1)(jiti@2.6.1)(lightningcss@1.30.1)(terser@5.44.0)(yaml@2.8.1)
+        version: 6.3.6(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(terser@5.44.0)(yaml@2.8.1)
 
 packages:
 
@@ -1616,6 +1625,9 @@ packages:
   '@types/node@24.7.1':
     resolution: {integrity: sha512-CmyhGZanP88uuC5GpWU9q+fI61j2SkhO3UGMUdfYRE6Bcy0ccyzn1Rqj9YAB/ZY4kOXmNf0ocah5GtphmLMP6Q==}
 
+  '@types/node@24.7.2':
+    resolution: {integrity: sha512-/NbVmcGTP+lj5oa4yiYxxeBjRivKQ5Ns1eSZeB99ExsEQ6rX5XYU1Zy/gGxY/ilqtD4Etx9mKyrPxZRetiahhA==}
+
   '@types/qs@6.14.0':
     resolution: {integrity: sha512-eOunJqu0K1923aExK6y8p6fsihYEn/BYuQ4g0CxAAgFc4b/ZLN4CrsRZ55srTdqoiLzU2B2evC+apEIxprEzkQ==}
 
@@ -2845,6 +2857,9 @@ packages:
 
   dag-map@2.0.2:
     resolution: {integrity: sha512-xnsprIzYuDeiyu5zSKwilV/ajRHxnoMlAhEREfyfTgTSViMVY2fGP1ZcHJbtwup26oCkofySU/m6oKJ3HrkW7w==}
+
+  daisyui@5.2.3:
+    resolution: {integrity: sha512-sldBQUIFCsSPoF4LvoHhIi9GnvBX/3aZD9NoTOvpTSX8sDjO484wQx7yEvRyREMpn4rZMvQSKKskHAHdM8+B4Q==}
 
   data-urls@5.0.0:
     resolution: {integrity: sha512-ZYP5VBHshaDAiVZxjbRVcFJpc+4xGgT0bK3vzy1HLN8jTO975HEbuYzZJcHoQEY5K1a0z8YayJkyVETa08eNTg==}
@@ -4484,8 +4499,8 @@ packages:
   linkify-it@5.0.0:
     resolution: {integrity: sha512-5aHCbzQRADcdP+ATqnDuhhJ/MRIqDkZX5pyjFHRRysS8vZ5AbqGEoFIb6pYHPZ+L/OC2Lc+xT8uHVVR5CAK/wQ==}
 
-  lint-staged@16.2.3:
-    resolution: {integrity: sha512-1OnJEESB9zZqsp61XHH2fvpS1es3hRCxMplF/AJUDa8Ho8VrscYDIuxGrj3m8KPXbcWZ8fT9XTMUhEQmOVKpKw==}
+  lint-staged@16.2.4:
+    resolution: {integrity: sha512-Pkyr/wd90oAyXk98i/2KwfkIhoYQUMtss769FIT9hFM5ogYZwrk+GRE46yKXSg2ZGhcJ1p38Gf5gmI5Ohjg2yg==}
     engines: {node: '>=20.17'}
     hasBin: true
 
@@ -4586,6 +4601,9 @@ packages:
 
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
+
+  lucide@0.545.0:
+    resolution: {integrity: sha512-mrBH0upkb1TH8ZLkf0XERQAKMdTJ1C+Offr7eSvanmdQ7JrV8jkrFw5jgRAS8fygiZgG4X9mfEg/BXCL+mNMRw==}
 
   magic-string@0.25.9:
     resolution: {integrity: sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ==}
@@ -4807,8 +4825,8 @@ packages:
     resolution: {integrity: sha512-avsJQhyd+680gKXyG/sQc0nXaC6rBkPOfyHYcFb9+hdkqQkR9bdnkJ0AMZhke0oesPqIO+mFFJ+IdBc7mst4IA==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
 
-  nano-spawn@1.0.3:
-    resolution: {integrity: sha512-jtpsQDetTnvS2Ts1fiRdci5rx0VYws5jGyC+4IYOTnIQ/wwdf6JdomlHBwqC3bJYOvaKu0C2GSZ1A60anrYpaA==}
+  nano-spawn@2.0.0:
+    resolution: {integrity: sha512-tacvGzUY5o2D8CBh2rrwxyNojUsZNU2zjNTzKQrkgGJQTbGAfArVWXSKMBokBeeg6C7OLRGUEyoFlYbfeWQIqw==}
     engines: {node: '>=20.17'}
 
   nanoid@3.3.11:
@@ -5886,6 +5904,12 @@ packages:
     engines: {node: '>=18.12.0'}
     peerDependencies:
       stylelint: ^16.23.0
+
+  stylelint-config-tailwindcss@1.0.0:
+    resolution: {integrity: sha512-e6WUBJeLdOZ0sy8FZ1jk5Zy9iNGqqJbrMwnnV0Hpaw/yin6QO3gVv/zvyqSty8Yg6nEB5gqcyJbN387TPhEa7Q==}
+    peerDependencies:
+      stylelint: '>=13.13.1'
+      tailwindcss: '>=2.2.16'
 
   stylelint@16.25.0:
     resolution: {integrity: sha512-Li0avYWV4nfv1zPbdnxLYBGq4z8DVZxbRgx4Kn6V+Uftz1rMoF1qiEI3oL4kgWqyYgCgs7gT5maHNZ82Gk03vQ==}
@@ -7600,7 +7624,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@embroider/vite@1.3.2(@embroider/core@4.2.4(@glint/template@1.6.1))(@glint/template@1.6.1)(rollup@4.52.4)(vite@6.3.6(@types/node@24.7.1)(jiti@2.6.1)(lightningcss@1.30.1)(terser@5.44.0)(yaml@2.8.1))':
+  '@embroider/vite@1.3.2(@embroider/core@4.2.4(@glint/template@1.6.1))(@glint/template@1.6.1)(rollup@4.52.4)(vite@6.3.6(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(terser@5.44.0)(yaml@2.8.1))':
     dependencies:
       '@babel/core': 7.28.4
       '@embroider/core': 4.2.4(@glint/template@1.6.1)
@@ -7619,7 +7643,7 @@ snapshots:
       send: 0.18.0
       source-map-url: 0.4.1
       terser: 5.44.0
-      vite: 6.3.6(@types/node@24.7.1)(jiti@2.6.1)(lightningcss@1.30.1)(terser@5.44.0)(yaml@2.8.1)
+      vite: 6.3.6(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(terser@5.44.0)(yaml@2.8.1)
     transitivePeerDependencies:
       - '@glint/template'
       - bufferutil
@@ -7964,12 +7988,12 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.3': {}
 
-  '@inquirer/external-editor@1.0.2(@types/node@24.7.1)':
+  '@inquirer/external-editor@1.0.2(@types/node@24.7.2)':
     dependencies:
       chardet: 2.1.0
       iconv-lite: 0.7.0
     optionalDependencies:
-      '@types/node': 24.7.1
+      '@types/node': 24.7.2
 
   '@inquirer/figures@1.0.13': {}
 
@@ -8200,12 +8224,12 @@ snapshots:
       '@tailwindcss/oxide-win32-arm64-msvc': 4.1.14
       '@tailwindcss/oxide-win32-x64-msvc': 4.1.14
 
-  '@tailwindcss/vite@4.1.14(vite@6.3.6(@types/node@24.7.1)(jiti@2.6.1)(lightningcss@1.30.1)(terser@5.44.0)(yaml@2.8.1))':
+  '@tailwindcss/vite@4.1.14(vite@6.3.6(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(terser@5.44.0)(yaml@2.8.1))':
     dependencies:
       '@tailwindcss/node': 4.1.14
       '@tailwindcss/oxide': 4.1.14
       tailwindcss: 4.1.14
-      vite: 6.3.6(@types/node@24.7.1)(jiti@2.6.1)(lightningcss@1.30.1)(terser@5.44.0)(yaml@2.8.1)
+      vite: 6.3.6(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(terser@5.44.0)(yaml@2.8.1)
 
   '@types/babel__code-frame@7.0.6': {}
 
@@ -8280,6 +8304,10 @@ snapshots:
   '@types/minimatch@3.0.5': {}
 
   '@types/node@24.7.1':
+    dependencies:
+      undici-types: 7.14.0
+
+  '@types/node@24.7.2':
     dependencies:
       undici-types: 7.14.0
 
@@ -9699,6 +9727,8 @@ snapshots:
 
   dag-map@2.0.2: {}
 
+  daisyui@5.2.3: {}
+
   data-urls@5.0.0:
     dependencies:
       whatwg-mimetype: 4.0.0
@@ -10025,7 +10055,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  ember-cli@6.7.2(@types/node@24.7.1)(handlebars@4.7.8)(underscore@1.13.7):
+  ember-cli@6.7.2(@types/node@24.7.2)(handlebars@4.7.8)(underscore@1.13.7):
     dependencies:
       '@ember-tooling/blueprint-blueprint': 0.0.2
       '@ember-tooling/blueprint-model': 0.0.2
@@ -10080,7 +10110,7 @@ snapshots:
       heimdalljs-logger: 0.1.10
       http-proxy: 1.18.1
       inflection: 2.0.1
-      inquirer: 9.3.8(@types/node@24.7.1)
+      inquirer: 9.3.8(@types/node@24.7.2)
       is-git-url: 1.0.0
       is-language-code: 3.1.0
       isbinaryfile: 5.0.6
@@ -11508,9 +11538,9 @@ snapshots:
       strip-ansi: 6.0.1
       through: 2.3.8
 
-  inquirer@9.3.8(@types/node@24.7.1):
+  inquirer@9.3.8(@types/node@24.7.2):
     dependencies:
-      '@inquirer/external-editor': 1.0.2(@types/node@24.7.1)
+      '@inquirer/external-editor': 1.0.2(@types/node@24.7.2)
       '@inquirer/figures': 1.0.13
       ansi-escapes: 4.3.2
       cli-width: 4.1.0
@@ -11757,7 +11787,7 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 24.7.1
+      '@types/node': 24.7.2
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
@@ -11965,12 +11995,12 @@ snapshots:
     dependencies:
       uc.micro: 2.1.0
 
-  lint-staged@16.2.3:
+  lint-staged@16.2.4:
     dependencies:
       commander: 14.0.1
       listr2: 9.0.4
       micromatch: 4.0.8
-      nano-spawn: 1.0.3
+      nano-spawn: 2.0.0
       pidtree: 0.6.0
       string-argv: 0.3.2
       yaml: 2.8.1
@@ -12076,6 +12106,8 @@ snapshots:
   lru-cache@5.1.1:
     dependencies:
       yallist: 3.1.1
+
+  lucide@0.545.0: {}
 
   magic-string@0.25.9:
     dependencies:
@@ -12290,7 +12322,7 @@ snapshots:
 
   mute-stream@1.0.0: {}
 
-  nano-spawn@1.0.3: {}
+  nano-spawn@2.0.0: {}
 
   nanoid@3.3.11: {}
 
@@ -13464,6 +13496,11 @@ snapshots:
       stylelint: 16.25.0(typescript@5.9.3)
       stylelint-config-recommended: 17.0.0(stylelint@16.25.0(typescript@5.9.3))
 
+  stylelint-config-tailwindcss@1.0.0(stylelint@16.25.0(typescript@5.9.3))(tailwindcss@4.1.14):
+    dependencies:
+      stylelint: 16.25.0(typescript@5.9.3)
+      tailwindcss: 4.1.14
+
   stylelint@16.25.0(typescript@5.9.3):
     dependencies:
       '@csstools/css-parser-algorithms': 3.0.5(@csstools/css-tokenizer@3.0.4)
@@ -13963,7 +14000,7 @@ snapshots:
 
   vary@1.1.2: {}
 
-  vite@6.3.6(@types/node@24.7.1)(jiti@2.6.1)(lightningcss@1.30.1)(terser@5.44.0)(yaml@2.8.1):
+  vite@6.3.6(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(terser@5.44.0)(yaml@2.8.1):
     dependencies:
       esbuild: 0.25.10
       fdir: 6.5.0(picomatch@4.0.3)
@@ -13972,7 +14009,7 @@ snapshots:
       rollup: 4.52.4
       tinyglobby: 0.2.15
     optionalDependencies:
-      '@types/node': 24.7.1
+      '@types/node': 24.7.2
       fsevents: 2.3.3
       jiti: 2.6.1
       lightningcss: 1.30.1
