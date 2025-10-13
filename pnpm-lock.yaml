@@ -106,8 +106,8 @@ importers:
         specifier: ^2.0.3
         version: 2.0.3
       '@rollup/plugin-babel':
-        specifier: ^6.0.4
-        version: 6.0.4(@babel/core@7.28.4)(rollup@4.52.4)
+        specifier: ^6.1.0
+        version: 6.1.0(@babel/core@7.28.4)(rollup@4.52.4)
       '@tailwindcss/vite':
         specifier: ^4.1.14
         version: 4.1.14(vite@7.1.9(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(terser@5.44.0)(yaml@2.8.1))
@@ -1339,8 +1339,8 @@ packages:
     resolution: {integrity: sha512-4rdu8GPY9TeQwsYp5D2My74dC3dSVS3tghAvisG80ybK4lqa0gvlrglaSTBxogJbxqHRw/NjI/liEtb3+SD+Bw==}
     engines: {node: '>=18.12'}
 
-  '@rollup/plugin-babel@6.0.4':
-    resolution: {integrity: sha512-YF7Y52kFdFT/xVSuVdjkV5ZdX/3YtmX0QulG+x0taQOtJdHYzVU61aSSkAgVJ7NOv6qPkIYiJSgSWWN/DM5sGw==}
+  '@rollup/plugin-babel@6.1.0':
+    resolution: {integrity: sha512-dFZNuFD2YRcoomP4oYf+DvQNSUA9ih+A3vUqopQx5EdtPGo3WBnQcI/S8pwpz91UsGfL0HsMSOlaMld8HrbubA==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       '@babel/core': ^7.0.0
@@ -8068,7 +8068,7 @@ snapshots:
       '@pnpm/error': 1000.0.5
       find-up: 5.0.0
 
-  '@rollup/plugin-babel@6.0.4(@babel/core@7.28.4)(rollup@4.52.4)':
+  '@rollup/plugin-babel@6.1.0(@babel/core@7.28.4)(rollup@4.52.4)':
     dependencies:
       '@babel/core': 7.28.4
       '@babel/helper-module-imports': 7.27.1
