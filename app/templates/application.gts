@@ -1,6 +1,18 @@
 import { pageTitle } from 'ember-page-title';
-import LucideIcon from 'modern-ember-example/components/lucide-icon';
+import Icon from 'modern-ember-example/components/icon';
 import GettingStartedCode from 'modern-ember-example/components/getting-started-code';
+
+// Import icons
+import FlameIcon from '~icons/lucide/flame';
+import RocketIcon from '~icons/lucide/rocket';
+import GithubIcon from '~icons/lucide/github';
+import FileCodeIcon from '~icons/lucide/file-code';
+import ZapIcon from '~icons/lucide/zap';
+import PaletteIcon from '~icons/lucide/palette';
+import ShieldIcon from '~icons/lucide/shield';
+import CheckCircleIcon from '~icons/lucide/check-circle';
+import TerminalIcon from '~icons/lucide/terminal';
+import InfoIcon from '~icons/lucide/info';
 
 <template>
   {{pageTitle "Modern Ember Example"}}
@@ -11,7 +23,7 @@ import GettingStartedCode from 'modern-ember-example/components/getting-started-
       <div class="hero-content text-center">
         <div class="max-w-3xl">
           <div class="flex justify-center mb-6">
-            <LucideIcon @name="Flame" @class="w-20 h-20 text-primary" />
+            <Icon @icon={{FlameIcon}} class="w-20 h-20 text-primary" />
           </div>
           <h1 class="text-5xl font-bold">Modern Ember Example</h1>
           <p class="py-6 text-lg">
@@ -21,7 +33,7 @@ import GettingStartedCode from 'modern-ember-example/components/getting-started-
           </p>
           <div class="flex gap-4 justify-center">
             <a href="#getting-started" class="btn btn-primary">
-              <LucideIcon @name="Rocket" @class="w-5 h-5" />
+              <Icon @icon={{RocketIcon}} class="w-5 h-5" />
               Get Started
             </a>
             <a
@@ -30,7 +42,7 @@ import GettingStartedCode from 'modern-ember-example/components/getting-started-
               rel="noopener noreferrer"
               class="btn btn-outline"
             >
-              <LucideIcon @name="Github" @class="w-5 h-5" />
+              <Icon @icon={{GithubIcon}} class="w-5 h-5" />
               View on GitHub
             </a>
           </div>
@@ -73,7 +85,7 @@ import GettingStartedCode from 'modern-ember-example/components/getting-started-
         >
           <div class="card-body">
             <div class="flex items-center gap-3 mb-4">
-              <LucideIcon @name="FileCode" @class="w-8 h-8 text-secondary" />
+              <Icon @icon={{FileCodeIcon}} class="w-8 h-8 text-secondary" />
               <h3 class="card-title">TypeScript + Glint</h3>
             </div>
             <p>Full type safety with Glint v2 providing type-checking for
@@ -90,7 +102,7 @@ import GettingStartedCode from 'modern-ember-example/components/getting-started-
         >
           <div class="card-body">
             <div class="flex items-center gap-3 mb-4">
-              <LucideIcon @name="Zap" @class="w-8 h-8 text-accent" />
+              <Icon @icon={{ZapIcon}} class="w-8 h-8 text-accent" />
               <h3 class="card-title">Vite + Embroider</h3>
             </div>
             <p>Lightning-fast dev server and optimized production builds with
@@ -107,7 +119,7 @@ import GettingStartedCode from 'modern-ember-example/components/getting-started-
         >
           <div class="card-body">
             <div class="flex items-center gap-3 mb-4">
-              <LucideIcon @name="Palette" @class="w-8 h-8 text-info" />
+              <Icon @icon={{PaletteIcon}} class="w-8 h-8 text-info" />
               <h3 class="card-title">Tailwind CSS v4</h3>
             </div>
             <p>Utility-first CSS framework with daisyUI components for rapid UI
@@ -144,7 +156,7 @@ import GettingStartedCode from 'modern-ember-example/components/getting-started-
         >
           <div class="card-body">
             <div class="flex items-center gap-3 mb-4">
-              <LucideIcon @name="Shield" @class="w-8 h-8 text-warning" />
+              <Icon @icon={{ShieldIcon}} class="w-8 h-8 text-warning" />
               <h3 class="card-title">Authentication</h3>
             </div>
             <p>Secure session management with ember-simple-auth and type-safe
@@ -163,7 +175,7 @@ import GettingStartedCode from 'modern-ember-example/components/getting-started-
           <div class="flex gap-4">
             <div class="flex-shrink-0">
               <div class="badge badge-primary badge-lg">
-                <LucideIcon @name="CheckCircle" @class="w-5 h-5" />
+                <Icon @icon={{CheckCircleIcon}} class="w-5 h-5" />
               </div>
             </div>
             <div>
@@ -178,7 +190,7 @@ import GettingStartedCode from 'modern-ember-example/components/getting-started-
           <div class="flex gap-4">
             <div class="flex-shrink-0">
               <div class="badge badge-secondary badge-lg">
-                <LucideIcon @name="CheckCircle" @class="w-5 h-5" />
+                <Icon @icon={{CheckCircleIcon}} class="w-5 h-5" />
               </div>
             </div>
             <div>
@@ -193,7 +205,7 @@ import GettingStartedCode from 'modern-ember-example/components/getting-started-
           <div class="flex gap-4">
             <div class="flex-shrink-0">
               <div class="badge badge-accent badge-lg">
-                <LucideIcon @name="CheckCircle" @class="w-5 h-5" />
+                <Icon @icon={{CheckCircleIcon}} class="w-5 h-5" />
               </div>
             </div>
             <div>
@@ -208,7 +220,7 @@ import GettingStartedCode from 'modern-ember-example/components/getting-started-
           <div class="flex gap-4">
             <div class="flex-shrink-0">
               <div class="badge badge-info badge-lg">
-                <LucideIcon @name="CheckCircle" @class="w-5 h-5" />
+                <Icon @icon={{CheckCircleIcon}} class="w-5 h-5" />
               </div>
             </div>
             <div>
@@ -231,7 +243,7 @@ import GettingStartedCode from 'modern-ember-example/components/getting-started-
         <div class="card bg-base-100 shadow-xl">
           <div class="card-body">
             <div class="flex items-center gap-3 mb-4">
-              <LucideIcon @name="Terminal" @class="w-6 h-6 text-primary" />
+              <Icon @icon={{TerminalIcon}} class="w-6 h-6 text-primary" />
               <h3 class="card-title">Clone and Run</h3>
             </div>
 
@@ -244,7 +256,7 @@ import GettingStartedCode from 'modern-ember-example/components/getting-started-
               <GettingStartedCode />
 
               <div class="alert alert-info">
-                <LucideIcon @name="Info" @class="w-5 h-5" />
+                <Icon @icon={{InfoIcon}} class="w-5 h-5" />
                 <span>
                   The dev server will start at
                   <code

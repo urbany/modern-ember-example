@@ -147,8 +147,8 @@ Located in `config/optional-features.json`:
 ### Icons
 
 - **Lucide Icons**: Icon library integrated via custom component
-- Usage: `<LucideIcon @name="icon-name" @class="optional-classes" />`
-- Component location: `app/components/lucide-icon.gts`
+- Usage: `<Icon @icon={{IconName}} class="optional-classes" />`
+- Component location: `app/components/icon.gts`
 - Supports all icons from the lucide icon set
 - Documentation can be searched via Context7 MCP for available icon names
 

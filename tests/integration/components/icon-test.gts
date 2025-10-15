@@ -1,13 +1,16 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'modern-ember-example/tests/helpers';
 import { render } from '@ember/test-helpers';
-import LucideIcon from 'modern-ember-example/components/lucide-icon';
+import Icon from 'modern-ember-example/components/icon';
 
-module('Integration | Component | lucide-icon', function (hooks) {
+// Import test icon
+import HouseIcon from '~icons/lucide/house';
+
+module('Integration | Component | icon', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function (assert) {
-    await render(<template><LucideIcon @name="House" /></template>);
+    await render(<template><Icon @icon={{HouseIcon}} /></template>);
 
     assert.dom('svg').exists('renders an SVG element');
   });

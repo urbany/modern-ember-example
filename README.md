@@ -115,8 +115,8 @@ The application uses WarpDrive (EmberData 5.x) with a modular architecture:
 
 The application uses Lucide Icons integrated via a custom Glimmer component:
 
-- **Usage**: `<LucideIcon @name="icon-name" @class="optional-classes" />`
-- **Component**: `app/components/lucide-icon.gts`
+- **Usage**: `<Icon @icon={{IconName}} class="optional-classes" />`
+- **Component**: `app/components/icon.gts`
 - **Documentation**: [Lucide Icons](https://lucide.dev/)
 - Supports all icons from the Lucide icon set
 
