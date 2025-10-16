@@ -2,6 +2,11 @@
   "extends": "@ember/app-tsconfig",
   "include": ["app", "tests", "types"],
   "compilerOptions": {
+    "plugins": [
+      {
+        "name": "@glint/tsserver-plugin"
+      }
+    ],
     "allowJs": true,
     "paths": {
       "modern-ember-example/tests/*": ["./tests/*"],
