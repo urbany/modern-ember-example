@@ -1,5 +1,8 @@
 export default {
-  plugins: ['prettier-plugin-ember-template-tag'],
+  plugins: [
+    'prettier-plugin-ember-template-tag',
+    'prettier-plugin-tailwindcss',
+  ],
   singleQuote: true,
   overrides: [
     {

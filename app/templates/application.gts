@@ -17,13 +17,13 @@ import InfoIcon from '~icons/lucide/info';
 <template>
   {{pageTitle "Modern Ember Example"}}
 
-  <div class="min-h-screen bg-base-200">
+  <div class="bg-base-200 min-h-screen">
     {{! Hero Section }}
     <div class="hero bg-base-100 py-20">
       <div class="hero-content text-center">
         <div class="max-w-3xl">
-          <div class="flex justify-center mb-6">
-            <Icon @icon={{FlameIcon}} class="w-20 h-20 text-primary" />
+          <div class="mb-6 flex justify-center">
+            <Icon @icon={{FlameIcon}} class="text-primary h-20 w-20" />
           </div>
           <h1 class="text-5xl font-bold">Modern Ember Example</h1>
           <p class="py-6 text-lg">
@@ -31,9 +31,9 @@ import InfoIcon from '~icons/lucide/info';
             best practices for building modern web applications with TypeScript,
             Vite, and Tailwind CSS.
           </p>
-          <div class="flex gap-4 justify-center">
+          <div class="flex justify-center gap-4">
             <a href="#getting-started" class="btn btn-primary">
-              <Icon @icon={{RocketIcon}} class="w-5 h-5" />
+              <Icon @icon={{RocketIcon}} class="h-5 w-5" />
               Get Started
             </a>
             <a
@@ -42,7 +42,7 @@ import InfoIcon from '~icons/lucide/info';
               rel="noopener noreferrer"
               class="btn btn-outline"
             >
-              <Icon @icon={{GithubIcon}} class="w-5 h-5" />
+              <Icon @icon={{GithubIcon}} class="h-5 w-5" />
               View on GitHub
             </a>
           </div>
@@ -52,22 +52,22 @@ import InfoIcon from '~icons/lucide/info';
 
     {{! Tech Stack Features }}
     <div class="container mx-auto px-4 py-16">
-      <h2 class="text-3xl font-bold text-center mb-12">Tech Stack</h2>
+      <h2 class="mb-12 text-center text-3xl font-bold">Tech Stack</h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {{! Ember.js Card }}
         <a
           href="https://emberjs.com/"
           target="_blank"
           rel="noopener noreferrer"
-          class="card bg-base-100 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+          class="card bg-base-100 shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl"
         >
           <div class="card-body">
-            <div class="flex items-center gap-3 mb-4">
+            <div class="mb-4 flex items-center gap-3">
               <img
                 src="https://emberjs.com/images/brand/ember-e-circle-icon-4c.svg"
                 alt="Ember.js"
-                class="w-8 h-8"
+                class="h-8 w-8"
               />
               <h3 class="card-title">Ember.js 6.7</h3>
             </div>
@@ -81,11 +81,11 @@ import InfoIcon from '~icons/lucide/info';
           href="https://typed-ember.gitbook.io/glint"
           target="_blank"
           rel="noopener noreferrer"
-          class="card bg-base-100 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+          class="card bg-base-100 shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl"
         >
           <div class="card-body">
-            <div class="flex items-center gap-3 mb-4">
-              <Icon @icon={{FileCodeIcon}} class="w-8 h-8 text-secondary" />
+            <div class="mb-4 flex items-center gap-3">
+              <Icon @icon={{FileCodeIcon}} class="text-secondary h-8 w-8" />
               <h3 class="card-title">TypeScript + Glint</h3>
             </div>
             <p>Full type safety with Glint v2 providing type-checking for
@@ -98,11 +98,11 @@ import InfoIcon from '~icons/lucide/info';
           href="https://github.com/embroider-build/embroider"
           target="_blank"
           rel="noopener noreferrer"
-          class="card bg-base-100 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+          class="card bg-base-100 shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl"
         >
           <div class="card-body">
-            <div class="flex items-center gap-3 mb-4">
-              <Icon @icon={{ZapIcon}} class="w-8 h-8 text-accent" />
+            <div class="mb-4 flex items-center gap-3">
+              <Icon @icon={{ZapIcon}} class="text-accent h-8 w-8" />
               <h3 class="card-title">Vite + Embroider</h3>
             </div>
             <p>Lightning-fast dev server and optimized production builds with
@@ -115,11 +115,11 @@ import InfoIcon from '~icons/lucide/info';
           href="https://tailwindcss.com/docs"
           target="_blank"
           rel="noopener noreferrer"
-          class="card bg-base-100 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+          class="card bg-base-100 shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl"
         >
           <div class="card-body">
-            <div class="flex items-center gap-3 mb-4">
-              <Icon @icon={{PaletteIcon}} class="w-8 h-8 text-info" />
+            <div class="mb-4 flex items-center gap-3">
+              <Icon @icon={{PaletteIcon}} class="text-info h-8 w-8" />
               <h3 class="card-title">Tailwind CSS v4</h3>
             </div>
             <p>Utility-first CSS framework with daisyUI components for rapid UI
@@ -132,10 +132,10 @@ import InfoIcon from '~icons/lucide/info';
           href="https://warp-drive.io/guides/"
           target="_blank"
           rel="noopener noreferrer"
-          class="card bg-base-100 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+          class="card bg-base-100 shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl"
         >
           <div class="card-body">
-            <div class="flex items-center gap-3 mb-4">
+            <div class="mb-4 flex items-center gap-3">
               <img
                 src="https://canary.warp-drive.io/logos/warp-drive/logo-yellow-slab.svg"
                 alt="WarpDrive"
@@ -152,11 +152,11 @@ import InfoIcon from '~icons/lucide/info';
           href="https://ember-simple-auth.com/"
           target="_blank"
           rel="noopener noreferrer"
-          class="card bg-base-100 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+          class="card bg-base-100 shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl"
         >
           <div class="card-body">
-            <div class="flex items-center gap-3 mb-4">
-              <Icon @icon={{ShieldIcon}} class="w-8 h-8 text-warning" />
+            <div class="mb-4 flex items-center gap-3">
+              <Icon @icon={{ShieldIcon}} class="text-warning h-8 w-8" />
               <h3 class="card-title">Authentication</h3>
             </div>
             <p>Secure session management with ember-simple-auth and type-safe
@@ -169,17 +169,17 @@ import InfoIcon from '~icons/lucide/info';
     {{! Features Section }}
     <div class="bg-base-100 py-16">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12">Key Features</h2>
+        <h2 class="mb-12 text-center text-3xl font-bold">Key Features</h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="mx-auto grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
           <div class="flex gap-4">
             <div class="flex-shrink-0">
               <div class="badge badge-primary badge-lg">
-                <Icon @icon={{CheckCircleIcon}} class="w-5 h-5" />
+                <Icon @icon={{CheckCircleIcon}} class="h-5 w-5" />
               </div>
             </div>
             <div>
-              <h3 class="font-bold text-lg mb-2">Type-Safe Templates</h3>
+              <h3 class="mb-2 text-lg font-bold">Type-Safe Templates</h3>
               <p class="text-base-content/80">
                 Full TypeScript integration with Glint for type-checking in .gts
                 component files.
@@ -190,11 +190,11 @@ import InfoIcon from '~icons/lucide/info';
           <div class="flex gap-4">
             <div class="flex-shrink-0">
               <div class="badge badge-secondary badge-lg">
-                <Icon @icon={{CheckCircleIcon}} class="w-5 h-5" />
+                <Icon @icon={{CheckCircleIcon}} class="h-5 w-5" />
               </div>
             </div>
             <div>
-              <h3 class="font-bold text-lg mb-2">Modern Build Pipeline</h3>
+              <h3 class="mb-2 text-lg font-bold">Modern Build Pipeline</h3>
               <p class="text-base-content/80">
                 Vite for instant HMR and Embroider for optimized production
                 bundles.
@@ -205,11 +205,11 @@ import InfoIcon from '~icons/lucide/info';
           <div class="flex gap-4">
             <div class="flex-shrink-0">
               <div class="badge badge-accent badge-lg">
-                <Icon @icon={{CheckCircleIcon}} class="w-5 h-5" />
+                <Icon @icon={{CheckCircleIcon}} class="h-5 w-5" />
               </div>
             </div>
             <div>
-              <h3 class="font-bold text-lg mb-2">Component Library</h3>
+              <h3 class="mb-2 text-lg font-bold">Component Library</h3>
               <p class="text-base-content/80">
                 Beautiful UI components from daisyUI with Lucide icons
                 integration.
@@ -220,11 +220,11 @@ import InfoIcon from '~icons/lucide/info';
           <div class="flex gap-4">
             <div class="flex-shrink-0">
               <div class="badge badge-info badge-lg">
-                <Icon @icon={{CheckCircleIcon}} class="w-5 h-5" />
+                <Icon @icon={{CheckCircleIcon}} class="h-5 w-5" />
               </div>
             </div>
             <div>
-              <h3 class="font-bold text-lg mb-2">Best Practices</h3>
+              <h3 class="mb-2 text-lg font-bold">Best Practices</h3>
               <p class="text-base-content/80">
                 Pre-configured linting, formatting, and git hooks for code
                 quality.
@@ -237,13 +237,13 @@ import InfoIcon from '~icons/lucide/info';
 
     {{! Getting Started Section }}
     <div id="getting-started" class="container mx-auto px-4 py-16">
-      <h2 class="text-3xl font-bold text-center mb-12">Getting Started</h2>
+      <h2 class="mb-12 text-center text-3xl font-bold">Getting Started</h2>
 
-      <div class="max-w-3xl mx-auto">
+      <div class="mx-auto max-w-3xl">
         <div class="card bg-base-100 shadow-xl">
           <div class="card-body">
-            <div class="flex items-center gap-3 mb-4">
-              <Icon @icon={{TerminalIcon}} class="w-6 h-6 text-primary" />
+            <div class="mb-4 flex items-center gap-3">
+              <Icon @icon={{TerminalIcon}} class="text-primary h-6 w-6" />
               <h3 class="card-title">Clone and Run</h3>
             </div>
 
@@ -256,7 +256,7 @@ import InfoIcon from '~icons/lucide/info';
               <GettingStartedCode />
 
               <div class="alert alert-info">
-                <Icon @icon={{InfoIcon}} class="w-5 h-5" />
+                <Icon @icon={{InfoIcon}} class="h-5 w-5" />
                 <span>
                   The dev server will start at
                   <code

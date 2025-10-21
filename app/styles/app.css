@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 
-@plugin "daisyui";
+@plugin 'daisyui';
 
 /* Icon component styles */
 .icon svg {

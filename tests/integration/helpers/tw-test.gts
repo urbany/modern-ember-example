@@ -9,7 +9,7 @@ module('Integration | Helper | tw', function (hooks) {
   test('it merges conflicting Tailwind classes', async function (assert) {
     await render(
       <template>
-        <div class={{tw "px-2 py-1 px-4"}}></div>
+        <div class={{tw "px-2 py-1" "px-4"}}></div>
       </template>
     );
 
@@ -21,7 +21,7 @@ module('Integration | Helper | tw', function (hooks) {
   test('it handles multiple class arguments', async function (assert) {
     await render(
       <template>
-        <div class={{tw "bg-red-500 text-white bg-blue-500"}}></div>
+        <div class={{tw "bg-red-500 text-white" "bg-blue-500"}}></div>
       </template>
     );
 
@@ -33,7 +33,7 @@ module('Integration | Helper | tw', function (hooks) {
   test('it merges conflicting background classes', async function (assert) {
     await render(
       <template>
-        <div class={{tw "bg-gray-100 bg-blue-500"}}></div>
+        <div class={{tw "bg-gray-100" "bg-blue-500"}}></div>
       </template>
     );
 
