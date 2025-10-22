@@ -7,5 +7,7 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function () {
-  // Add route declarations here
+  this.route('demo', function () {
+    this.route('notifications-demo', { path: '/notifications' });
+  });
 });

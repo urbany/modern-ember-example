@@ -4,7 +4,7 @@ A modern Ember.js application built with the latest tooling and best practices.
 
 ## Tech Stack
 
-- **Ember.js 6.7.x** (Octane edition)
+- **Ember.js 6.8.x** (Octane edition)
 - **Vite + Embroider** - Modern build pipeline for fast development and optimized production builds
 - **TypeScript** - Full type safety across the application
 - **Glint v2** - Template type-checking for `.gts` and `.gjs` files
@@ -13,6 +13,7 @@ A modern Ember.js application built with the latest tooling and best practices.
 - **daisyUI** - Component library built on Tailwind CSS
 - **Lucide Icons** - Modern icon library with custom Glimmer component integration
 - **ember-simple-auth** - Authentication and session management
+- **Toast Notifications** - Custom notification system with DaisyUI styling and positioning
 
 ## Prerequisites
 
@@ -76,6 +77,33 @@ The application uses WarpDrive (EmberData 5.x) with a modular architecture:
 - Full TypeScript coverage with strict typing
 - Glint v2 provides template type-checking for `.gts` and `.gjs` component files
 - Service injection uses type-safe patterns with module augmentation
+
+### Notifications System
+
+A complete toast notification system with the following features:
+
+- **Service-based API**: Inject the `notifications` service to show success, error, warning, and info messages
+- **Auto-dismiss**: Configurable duration with automatic cleanup
+- **Manual dismissal**: Click-to-dismiss functionality
+- **Positioning**: Configurable positioning (top-start, top-center, top-end, bottom-start, bottom-center, bottom-end)
+- **Type-safe**: Full TypeScript support with proper interfaces
+- **DaisyUI integration**: Styled with DaisyUI alert components and Lucide icons
+- **Demo route**: Visit `/notifications-demo` to see all features in action
+
+**Usage:**
+
+```typescript
+import { service } from '@ember/service';
+import type NotificationsService from 'modern-ember-example/services/notifications';
+
+@service declare notifications: NotificationsService;
+
+// Show notifications
+this.notifications.success('Operation completed!');
+this.notifications.error('Something went wrong', {
+  description: 'Please try again later'
+});
+```
 
 ### Build System
 
