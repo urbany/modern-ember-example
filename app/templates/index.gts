@@ -248,6 +248,23 @@ import BellIcon from '~icons/lucide/bell';
             >Try it out</LinkTo>
           </div>
         </div>
+
+        <div class="flex gap-4">
+          <div class="flex-shrink-0">
+            <div class="badge badge-neutral badge-lg">
+              <Icon @icon={{InfoIcon}} class="h-5 w-5" />
+            </div>
+          </div>
+          <div>
+            <h3 class="mb-2 text-lg font-bold">Modal Dialogs</h3>
+            <p class="text-base-content/80">
+              Promise-based modal system with DaisyUI styling, confirm dialogs,
+              and custom components.
+            </p>
+            <LinkTo @route="demo.modals-demo" class="link link-primary">Try it
+              out</LinkTo>
+          </div>
+        </div>
       </div>
     </div>
   </div>

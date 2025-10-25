@@ -1,5 +1,6 @@
 import { pageTitle } from 'ember-page-title';
 import NotificationsContainer from 'modern-ember-example/components/notifications-container';
+import ModalsContainer from 'modern-ember-example/components/modals-container';
 
 <template>
   {{pageTitle "Modern Ember Example"}}
@@ -14,4 +15,7 @@ import NotificationsContainer from 'modern-ember-example/components/notification
 
   {{! Global notifications container }}
   <NotificationsContainer />
+
+  {{! Global modals container }}
+  <ModalsContainer />
 </template>
