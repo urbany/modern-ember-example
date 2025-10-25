@@ -2,11 +2,9 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-> **Note**: This is a boilerplate template. For boilerplate-specific maintenance documentation, see [docs/BOILERPLATE.md](docs/BOILERPLATE.md).
-
 ## Project Overview
 
-This is an Ember.js application (v6.7.x, Octane edition) using a modern build pipeline with Vite and Embroider. The project uses TypeScript, Glint for type-checking templates, Tailwind CSS v4 for styling, and WarpDrive (EmberData 5.x) for data management with JSON:API support.
+This is an Ember.js application (v6.8.x, Octane edition) using a modern build pipeline with Vite and Embroider. The project uses TypeScript, Glint for type-checking templates, Tailwind CSS v4 for styling, and WarpDrive (EmberData 5.x) for data management with JSON:API support.
 
 ## Development Commands
 
@@ -70,7 +68,7 @@ ember help generate            # See available generators
 - Full TypeScript support with `tsconfig.json` extending `@ember/app-tsconfig`
 - **Glint v2** provides type-checking for template imports (`.gjs/.gts` files only)
 - Note: Glint v2 does not support Handlebars `.hbs` files - use `.gts` or `.gjs` instead
-- Path mappings: `modern-ember-example/*` → `./app/*`, `modern-ember-example/tests/*` → `./tests/*`
+- Path mappings: `PROJECT_NAME/*` → `./app/*`, `PROJECT_NAME/tests/*` → `./tests/*`
 - Service injection uses type-safe patterns with module augmentation in service files
 
 ### Babel Configuration
@@ -96,6 +94,9 @@ app/
 ├── controllers/              # Controllers (if needed)
 ├── models/                   # Data models
 ├── helpers/                  # Template helpers
+├── services/                 # Services (store, session, notifications, modals, theme)
+├── handlers/                 # WarpDrive request handlers
+├── schemas/                  # WarpDrive model schemas
 ├── styles/
 │   └── app.css              # Main stylesheet (imports Tailwind)
 └── templates/               # Route templates
@@ -234,9 +235,68 @@ Uses **ember-simple-auth** for session management:
 - AuthHandler automatically adds auth headers to all WarpDrive requests
 - Session service registered in service registry for type-safe injection
 
+## Notifications System
+
+A complete toast notification system:
+
+- **Service**: `app/services/notifications.ts`
+- **Container Component**: `app/components/notifications-container.gts`
+- **Item Component**: `app/components/notification-item.gts`
+- **Features**: Auto-dismiss, manual dismissal, configurable positioning, DaisyUI styling
+
+**Usage:**
+
+```typescript
+import { service } from '@ember/service';
+import type NotificationsService from 'PROJECT_NAME/services/notifications';
+
+@service declare notifications: NotificationsService;
+
+// Show notifications
+this.notifications.success('Success message');
+this.notifications.error('Error message', { description: 'Details' });
+this.notifications.warning('Warning message');
+this.notifications.info('Info message');
+```
+
+## Modal System
+
+Promise-based modal dialogs:
+
+- **Service**: `app/services/modals.ts`
+- **Container Component**: `app/components/modals-container.gts`
+- **Item Component**: `app/components/modal-item.gts`
+- **Features**: Promise-based API, DaisyUI styling, customizable buttons
+
+**Usage:**
+
+```typescript
+import { service } from '@ember/service';
+import type ModalsService from 'PROJECT_NAME/services/modals';
+
+@service declare modals: ModalsService;
+
+// Show modal and wait for user action
+const confirmed = await this.modals.confirm({
+  title: 'Confirm Action',
+  message: 'Are you sure?',
+  confirmText: 'Yes',
+  cancelText: 'No'
+});
+```
+
+## Theme Management
+
+Theme selector with localStorage persistence:
+
+- **Service**: `app/services/theme.ts`
+- **Component**: `app/components/theme-selector.gts`
+- **Storage**: Uses localStorage to persist theme selection
+- **Themes**: Configured in daisyUI (light, dark, cupcake, etc.)
+
 ## Key Dependencies
 
-- **ember-source**: ~6.7.0 (Octane edition)
+- **ember-source**: ~6.8.0 (Octane edition)
 - **@embroider/vite**: Modern build system
 - **WarpDrive packages**: `@warp-drive/core`, `@warp-drive/ember`, `@warp-drive/json-api`, `@warp-drive/legacy`
 - **ember-simple-auth**: Authentication and session management
@@ -269,7 +329,7 @@ The app uses Embroider's module resolution:
 
 - `ember-resolver` with `compatModules` from `@embroider/virtual/compat-modules`
 - Auto-import support via `ember-auto-import`
-- Module prefix: `modern-ember-example`
+- Module prefix: `PROJECT_NAME`
 
 ## Git Hooks
 

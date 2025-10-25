@@ -2,6 +2,75 @@
 
 A modern Ember.js application built with the latest tooling and best practices.
 
+> **Note**: This is a boilerplate project. Use the initialization script to quickly set up a new project from this template.
+>
+> **For boilerplate maintainers**: See [docs/BOILERPLATE.md](docs/BOILERPLATE.md) for maintenance documentation.
+
+## Using This Boilerplate
+
+This repository serves as a boilerplate for creating new Ember.js projects. To initialize a new project:
+
+### Quick Start
+
+```bash
+# Clone this repository
+git clone <repository-url> my-new-project
+cd my-new-project
+
+# Run the initialization script (dry-run first to preview changes)
+node init-project.cjs my-new-project --dry-run
+
+# Apply the changes
+node init-project.cjs my-new-project
+```
+
+### Initialization Script
+
+The `init-project.cjs` script automatically:
+
+- Renames all instances of "modern-ember-example" to your new project name
+- Updates package.json, tsconfig.json, and all configuration files
+- **Replaces README.md with a clean, project-ready template** (from `README.template.md`)
+- **Replaces CLAUDE.md with a clean template** (from `CLAUDE.template.md`)
+- Renames the workspace file
+- Removes the old .git directory and initializes a fresh repository
+- Installs dependencies with pnpm
+- Sets up git hooks
+
+**Usage:**
+
+```bash
+node init-project.cjs <new-project-name> [options]
+```
+
+**Options:**
+
+- `--dry-run` - Preview changes without applying them (recommended first step)
+- `--keep-git` - Keep the existing .git directory
+- `--init-git` - Initialize a new git repository after removing the old one
+- `--skip-install` - Skip running pnpm install
+- `--interactive` or `-i` - Interactive mode with prompts
+- `--help` or `-h` - Show help message
+
+**Examples:**
+
+```bash
+# Preview what will change
+node init-project.cjs my-awesome-app --dry-run
+
+# Initialize with all defaults (removes git, installs deps)
+node init-project.cjs my-awesome-app
+
+# Keep git history, skip installation
+node init-project.cjs my-awesome-app --keep-git --skip-install
+
+# Fresh start with new git repository
+node init-project.cjs my-awesome-app --init-git
+
+# Interactive mode
+node init-project.cjs --interactive
+```
+
 ## Tech Stack
 
 - **Ember.js 6.8.x** (Octane edition)
@@ -25,11 +94,15 @@ You will need the following things properly installed on your computer.
 - [Ember CLI](https://cli.emberjs.com/release/)
 - [Google Chrome](https://google.com/chrome/) (for running tests)
 
-## Installation
+## Installation (For Development of This Boilerplate)
 
-- `git clone <repository-url>` this repository
-- `cd modern-ember-example`
-- `pnpm install`
+If you're working on the boilerplate itself (not creating a new project):
+
+```bash
+git clone <repository-url>
+cd modern-ember-example
+pnpm install
+```
 
 ## Running / Development
 
