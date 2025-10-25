@@ -66,7 +66,6 @@ const FILES_TO_UPDATE = [
   'app/app.ts',
   'app/services/notifications.ts',
   'app/templates/application.gts',
-  'app/templates/index.gts',
   'app/templates/demo.gts',
   'app/components/header.gts',
   'app/components/theme-selector.gts',
@@ -347,6 +346,36 @@ class ProjectInitializer {
     );
   }
 
+  replaceIndexFromTemplate() {
+    const templatePath = path.join(
+      this.projectRoot,
+      'app/templates/index.gts.template'
+    );
+    const indexPath = path.join(this.projectRoot, 'app/templates/index.gts');
+
+    if (!fs.existsSync(templatePath)) {
+      this.warn(
+        'app/templates/index.gts.template not found, skipping index.gts replacement'
+      );
+      return;
+    }
+
+    let content = fs.readFileSync(templatePath, 'utf8');
+
+    // Replace PROJECT_NAME placeholder with actual project name
+    content = content.replace(/PROJECT_NAME/g, this.newProjectName);
+
+    if (!this.dryRun) {
+      fs.writeFileSync(indexPath, content, 'utf8');
+    }
+
+    this.logChange(
+      'Replaced',
+      'app/templates/index.gts',
+      'from template with simple landing page'
+    );
+  }
+
   removeGitDirectory() {
     const gitPath = path.join(this.projectRoot, '.git');
 
@@ -491,6 +520,7 @@ class ProjectInitializer {
     this.updatePackageJson();
     this.replaceReadmeFromTemplate();
     this.replaceClaudeFromTemplate();
+    this.replaceIndexFromTemplate();
     this.renameWorkspaceFile();
 
     // Git operations

@@ -1,5 +1,4 @@
 import Icon from 'modern-ember-example/components/icon';
-import GettingStartedCode from 'modern-ember-example/components/getting-started-code';
 import { LinkTo } from '@ember/routing';
 import Header from 'modern-ember-example/components/header';
 
@@ -291,7 +290,12 @@ import BellIcon from '~icons/lucide/bell';
               steps:
             </p>
 
-            <GettingStartedCode />
+            <div class="mockup-code">
+              <pre data-prefix="$"><code>git clone &lt;repository-url&gt;</code></pre>
+              <pre data-prefix="$"><code>cd &lt;project-name&gt;</code></pre>
+              <pre data-prefix="$"><code>pnpm install</code></pre>
+              <pre data-prefix="$"><code>pnpm start</code></pre>
+            </div>
 
             <div class="alert alert-info">
               <Icon @icon={{InfoIcon}} class="h-5 w-5" />

@@ -1,0 +1,147 @@
+import Icon from 'PROJECT_NAME/components/icon';
+import { LinkTo } from '@ember/routing';
+import Header from 'PROJECT_NAME/components/header';
+
+// Import icons
+import RocketIcon from '~icons/lucide/rocket';
+import CheckCircleIcon from '~icons/lucide/check-circle';
+import BellIcon from '~icons/lucide/bell';
+import InfoIcon from '~icons/lucide/info';
+
+<template>
+  {{! Navigation }}
+  <Header />
+
+  {{! Hero Section }}
+  <div class="hero bg-base-100 min-h-screen">
+    <div class="hero-content text-center">
+      <div class="max-w-2xl">
+        <h1 class="text-5xl font-bold">PROJECT_NAME</h1>
+        <p class="py-6 text-lg">
+          A modern Ember.js application built with TypeScript, Vite, Tailwind
+          CSS, and WarpDrive.
+        </p>
+        <div class="flex justify-center gap-4">
+          <LinkTo @route="demo.notifications-demo" class="btn btn-primary">
+            <Icon @icon={{BellIcon}} class="h-5 w-5" />
+            Try Notifications
+          </LinkTo>
+          <LinkTo @route="demo.modals-demo" class="btn btn-outline">
+            <Icon @icon={{InfoIcon}} class="h-5 w-5" />
+            Try Modals
+          </LinkTo>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{! Features Section }}
+  <div class="bg-base-100 py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="mb-12 text-center text-3xl font-bold">What's Included</h2>
+
+      <div class="mx-auto grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
+        <div class="flex gap-4">
+          <div class="flex-shrink-0">
+            <div class="badge badge-primary badge-lg">
+              <Icon @icon={{CheckCircleIcon}} class="h-5 w-5" />
+            </div>
+          </div>
+          <div>
+            <h3 class="mb-2 text-lg font-bold">TypeScript + Glint</h3>
+            <p class="text-base-content/80">
+              Full type safety with Glint v2 for template type-checking in .gts
+              files.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <div class="flex-shrink-0">
+            <div class="badge badge-secondary badge-lg">
+              <Icon @icon={{CheckCircleIcon}} class="h-5 w-5" />
+            </div>
+          </div>
+          <div>
+            <h3 class="mb-2 text-lg font-bold">Vite + Embroider</h3>
+            <p class="text-base-content/80">
+              Lightning-fast HMR and optimized production builds.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <div class="flex-shrink-0">
+            <div class="badge badge-accent badge-lg">
+              <Icon @icon={{CheckCircleIcon}} class="h-5 w-5" />
+            </div>
+          </div>
+          <div>
+            <h3 class="mb-2 text-lg font-bold">Tailwind CSS v4 + daisyUI</h3>
+            <p class="text-base-content/80">
+              Utility-first styling with beautiful pre-built components.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <div class="flex-shrink-0">
+            <div class="badge badge-info badge-lg">
+              <Icon @icon={{CheckCircleIcon}} class="h-5 w-5" />
+            </div>
+          </div>
+          <div>
+            <h3 class="mb-2 text-lg font-bold">WarpDrive Data Layer</h3>
+            <p class="text-base-content/80">
+              Modern data management with JSON:API support and request handlers.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <div class="flex-shrink-0">
+            <div class="badge badge-neutral badge-lg">
+              <Icon @icon={{BellIcon}} class="h-5 w-5" />
+            </div>
+          </div>
+          <div>
+            <h3 class="mb-2 text-lg font-bold">Notifications System</h3>
+            <p class="text-base-content/80">
+              Toast notifications with auto-dismiss and customizable positions.
+            </p>
+            <LinkTo
+              @route="demo.notifications-demo"
+              class="link link-primary"
+            >Try it out</LinkTo>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <div class="flex-shrink-0">
+            <div class="badge badge-neutral badge-lg">
+              <Icon @icon={{InfoIcon}} class="h-5 w-5" />
+            </div>
+          </div>
+          <div>
+            <h3 class="mb-2 text-lg font-bold">Modal Dialogs</h3>
+            <p class="text-base-content/80">
+              Promise-based modals with DaisyUI styling and confirm dialogs.
+            </p>
+            <LinkTo @route="demo.modals-demo" class="link link-primary">Try it
+              out</LinkTo>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{! Getting Started Section }}
+  <div class="container mx-auto px-4 py-16">
+    <h2 class="mb-8 text-center text-3xl font-bold">Ready to Build</h2>
+    <p class="mx-auto max-w-2xl text-center text-base-content/80">
+      Start building your application by editing
+      <code class="rounded bg-base-200 px-2 py-1">app/templates/index.gts</code>
+      and exploring the demo pages to see what's possible.
+    </p>
+  </div>
+</template>
