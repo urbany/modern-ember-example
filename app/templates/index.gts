@@ -1,6 +1,7 @@
 import Icon from 'modern-ember-example/components/icon';
 import GettingStartedCode from 'modern-ember-example/components/getting-started-code';
 import { LinkTo } from '@ember/routing';
+import Header from 'modern-ember-example/components/header';
 
 // Import icons
 import FlameIcon from '~icons/lucide/flame';
@@ -16,6 +17,9 @@ import InfoIcon from '~icons/lucide/info';
 import BellIcon from '~icons/lucide/bell';
 
 <template>
+  {{! Navigation }}
+  <Header />
+
   {{! Hero Section }}
   <div class="hero bg-base-100 py-20">
     <div class="hero-content text-center">
