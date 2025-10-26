@@ -21,6 +21,7 @@
  *   --keep-git        Keep the existing .git directory
  *   --init-git        Initialize a new git repository (only if .git is removed)
  *   --skip-install    Skip running pnpm install
+ *   --force           Run even if there are uncommitted changes
  *   --interactive, -i Prompt for all options
  *   --help, -h        Show this help message
  */
@@ -67,7 +68,6 @@ const FILES_TO_UPDATE = [
   'app/services/notifications.ts',
   'app/templates/application.gts',
   'app/templates/demo.gts',
-  'app/components/header.gts',
   'app/components/theme-selector.gts',
 ];
 
@@ -78,6 +78,7 @@ class ProjectInitializer {
     this.keepGit = options.keepGit || false;
     this.initGit = options.initGit || false;
     this.skipInstall = options.skipInstall || false;
+    this.force = options.force || false;
     this.interactive = options.interactive || false;
     this.projectRoot = process.cwd();
     this.changes = [];
@@ -167,6 +168,30 @@ class ProjectInitializer {
         'package.json not found. Please run this script from the project root.'
       );
       return false;
+    }
+
+    // Check for uncommitted changes
+    if (
+      !this.force &&
+      !this.dryRun &&
+      fs.existsSync(path.join(this.projectRoot, '.git'))
+    ) {
+      try {
+        const gitStatus = execSync('git status --porcelain', {
+          encoding: 'utf8',
+          cwd: this.projectRoot,
+        });
+        if (gitStatus.trim()) {
+          this.error('You have uncommitted changes in your git repository.');
+          this.warn(
+            'Please commit or stash your changes before running this script.'
+          );
+          this.info('Or use --force flag to run anyway (not recommended).');
+          return false;
+        }
+      } catch (error) {
+        // If git command fails, continue (might not be a git repo)
+      }
     }
 
     // Check if pnpm is installed (only if we're going to install)
@@ -349,13 +374,13 @@ class ProjectInitializer {
   replaceIndexFromTemplate() {
     const templatePath = path.join(
       this.projectRoot,
-      'app/templates/index.gts.template'
+      'app/templates/index.template.gts'
     );
     const indexPath = path.join(this.projectRoot, 'app/templates/index.gts');
 
     if (!fs.existsSync(templatePath)) {
       this.warn(
-        'app/templates/index.gts.template not found, skipping index.gts replacement'
+        'app/templates/index.template.gts not found, skipping index.gts replacement'
       );
       return;
     }
@@ -577,6 +602,7 @@ function parseArgs() {
     keepGit: false,
     initGit: false,
     skipInstall: false,
+    force: false,
     interactive: false,
   };
 
@@ -594,6 +620,8 @@ function parseArgs() {
       options.initGit = true;
     } else if (arg === '--skip-install') {
       options.skipInstall = true;
+    } else if (arg === '--force') {
+      options.force = true;
     } else if (arg === '--interactive' || arg === '-i') {
       options.interactive = true;
     } else if (!arg.startsWith('--') && !options.projectName) {
@@ -621,6 +649,7 @@ ${colors.bright}OPTIONS:${colors.reset}
   ${colors.cyan}--keep-git${colors.reset}        Keep the existing .git directory
   ${colors.cyan}--init-git${colors.reset}        Initialize a new git repository (only if .git is removed)
   ${colors.cyan}--skip-install${colors.reset}    Skip running pnpm install
+  ${colors.cyan}--force${colors.reset}           Run even if there are uncommitted changes
   ${colors.cyan}--interactive, -i${colors.reset} Prompt for all options
   ${colors.cyan}--help, -h${colors.reset}        Show this help message
 

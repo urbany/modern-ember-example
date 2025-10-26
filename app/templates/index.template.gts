@@ -1,16 +1,22 @@
-import Icon from 'PROJECT_NAME/components/icon';
+import Icon from '../components/icon';
 import { LinkTo } from '@ember/routing';
-import Header from 'PROJECT_NAME/components/header';
+import ThemeSelector from '../components/theme-selector';
 
 // Import icons
-import RocketIcon from '~icons/lucide/rocket';
 import CheckCircleIcon from '~icons/lucide/check-circle';
 import BellIcon from '~icons/lucide/bell';
 import InfoIcon from '~icons/lucide/info';
 
 <template>
-  {{! Navigation }}
-  <Header />
+  {{! Header with theme selector }}
+  <div class="navbar bg-base-100 border-base-300 border-b">
+    <div class="flex-1">
+      <LinkTo @route="index" class="btn btn-ghost text-xl">PROJECT_NAME</LinkTo>
+    </div>
+    <div class="flex-none">
+      <ThemeSelector />
+    </div>
+  </div>
 
   {{! Hero Section }}
   <div class="hero bg-base-100 min-h-screen">
@@ -138,9 +144,9 @@ import InfoIcon from '~icons/lucide/info';
   {{! Getting Started Section }}
   <div class="container mx-auto px-4 py-16">
     <h2 class="mb-8 text-center text-3xl font-bold">Ready to Build</h2>
-    <p class="mx-auto max-w-2xl text-center text-base-content/80">
+    <p class="text-base-content/80 mx-auto max-w-2xl text-center">
       Start building your application by editing
-      <code class="rounded bg-base-200 px-2 py-1">app/templates/index.gts</code>
+      <code class="bg-base-200 rounded px-2 py-1">app/templates/index.gts</code>
       and exploring the demo pages to see what's possible.
     </p>
   </div>
