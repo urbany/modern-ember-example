@@ -407,6 +407,19 @@ class ProjectInitializer {
       'app/templates/index.gts',
       'from template with simple landing page'
     );
+
+    // Delete header component since it's been inlined into index.gts
+    const headerPath = path.join(this.projectRoot, 'app/components/header.gts');
+    if (fs.existsSync(headerPath)) {
+      if (!this.dryRun) {
+        fs.unlinkSync(headerPath);
+      }
+      this.logChange(
+        'Deleted',
+        'app/components/header.gts',
+        'inlined into index.gts'
+      );
+    }
   }
 
   removeGitDirectory() {
