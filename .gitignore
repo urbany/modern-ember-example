@@ -28,3 +28,6 @@
 
 # broccoli-debug
 /DEBUG/
+
+# other
+.playwright-mcp/
