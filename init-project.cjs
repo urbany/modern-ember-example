@@ -43,8 +43,16 @@ const colors = {
   cyan: '\x1b[36m',
 };
 
-const OLD_PROJECT_NAME = 'modern-ember-example';
-const OLD_GITHUB_REPO = 'urbany/modern-ember-example';
+// Read current project info from package.json
+const packageJson = JSON.parse(
+  fs.readFileSync(path.join(__dirname, 'package.json'), 'utf8')
+);
+const OLD_PROJECT_NAME = packageJson.name;
+const OLD_GITHUB_REPO = packageJson.repository?.url
+  ? packageJson.repository.url
+      .replace(/^https?:\/\/github\.com\//, '')
+      .replace(/\.git$/, '')
+  : null;
 
 // Files that need project name replacement
 const FILES_TO_UPDATE = [
