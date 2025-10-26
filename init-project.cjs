@@ -66,16 +66,11 @@ const FILES_TO_UPDATE = [
   'tests/test-helper.ts',
   'tests/unit/utils/camel-case-keys-test.ts',
   'tests/unit/utils/local-storage-test.ts',
-  'tests/unit/services/notifications-test.ts',
-  'tests/integration/components/notification-item-test.gts',
-  'tests/integration/components/notifications-container-test.gts',
   'tests/integration/helpers/tw-test.gts',
   'tests/integration/components/icon-test.gts',
   // App files
   'app/app.ts',
-  'app/services/notifications.ts',
   'app/templates/application.gts',
-  'app/templates/demo.gts',
   'app/components/theme-selector.gts',
 ];
 
@@ -422,6 +417,53 @@ class ProjectInitializer {
     }
   }
 
+  deleteBoilerplateDemo() {
+    const filesToDelete = [
+      // Demo routes and templates
+      'app/routes/demo.ts',
+      'app/templates/demo.gts',
+      'app/templates/demo/notifications-demo.gts',
+      'app/templates/demo/modals-demo.gts',
+      'app/controllers/demo/notifications-demo.ts',
+      'app/controllers/demo/modals-demo.ts',
+      // Notification system
+      'app/services/notifications.ts',
+      'app/components/notification-item.gts',
+      'app/components/notifications-container.gts',
+      'app/types/notification.ts',
+      'tests/integration/components/notification-item-test.gts',
+      'tests/integration/components/notifications-container-test.gts',
+      'tests/unit/services/notifications-test.ts',
+      // Modal system
+      'app/services/modals.ts',
+      'app/components/modal-item.gts',
+      'app/components/modals-container.gts',
+      'app/types/modal.ts',
+    ];
+
+    const dirsToDelete = ['app/templates/demo', 'app/controllers/demo'];
+
+    for (const file of filesToDelete) {
+      const filePath = path.join(this.projectRoot, file);
+      if (fs.existsSync(filePath)) {
+        if (!this.dryRun) {
+          fs.unlinkSync(filePath);
+        }
+        this.logChange('Deleted', file, 'boilerplate demo file');
+      }
+    }
+
+    for (const dir of dirsToDelete) {
+      const dirPath = path.join(this.projectRoot, dir);
+      if (fs.existsSync(dirPath)) {
+        if (!this.dryRun) {
+          fs.rmSync(dirPath, { recursive: true, force: true });
+        }
+        this.logChange('Deleted', dir, 'boilerplate demo directory');
+      }
+    }
+  }
+
   removeGitDirectory() {
     const gitPath = path.join(this.projectRoot, '.git');
 
@@ -567,6 +609,7 @@ class ProjectInitializer {
     this.replaceReadmeFromTemplate();
     this.replaceClaudeFromTemplate();
     this.replaceIndexFromTemplate();
+    this.deleteBoilerplateDemo();
     this.renameWorkspaceFile();
 
     // Git operations
