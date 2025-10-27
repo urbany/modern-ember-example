@@ -70,7 +70,6 @@ const FILES_TO_UPDATE = [
   'tests/integration/components/icon-test.gts',
   // App files
   'app/app.ts',
-  'app/templates/application.gts',
   'app/components/theme-selector.gts',
 ];
 
@@ -417,6 +416,39 @@ class ProjectInitializer {
     }
   }
 
+  replaceApplicationFromTemplate() {
+    const templatePath = path.join(
+      this.projectRoot,
+      'app/templates/application.template.gts'
+    );
+    const applicationPath = path.join(
+      this.projectRoot,
+      'app/templates/application.gts'
+    );
+
+    if (!fs.existsSync(templatePath)) {
+      this.warn(
+        'app/templates/application.template.gts not found, skipping application.gts replacement'
+      );
+      return;
+    }
+
+    let content = fs.readFileSync(templatePath, 'utf8');
+
+    // Replace PROJECT_NAME placeholder with actual project name
+    content = content.replace(/PROJECT_NAME/g, this.newProjectName);
+
+    if (!this.dryRun) {
+      fs.writeFileSync(applicationPath, content, 'utf8');
+    }
+
+    this.logChange(
+      'Replaced',
+      'app/templates/application.gts',
+      'from template without demo containers'
+    );
+  }
+
   deleteBoilerplateDemo() {
     const filesToDelete = [
       // Demo routes and templates
@@ -608,6 +640,7 @@ class ProjectInitializer {
     this.updatePackageJson();
     this.replaceReadmeFromTemplate();
     this.replaceClaudeFromTemplate();
+    this.replaceApplicationFromTemplate();
     this.replaceIndexFromTemplate();
     this.deleteBoilerplateDemo();
     this.renameWorkspaceFile();
