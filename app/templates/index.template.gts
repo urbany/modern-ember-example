@@ -4,8 +4,6 @@ import ThemeSelector from '../components/theme-selector';
 
 // Import icons
 import CheckCircleIcon from '~icons/lucide/check-circle';
-import BellIcon from '~icons/lucide/bell';
-import InfoIcon from '~icons/lucide/info';
 
 <template>
   {{! Header with theme selector }}
@@ -27,16 +25,6 @@ import InfoIcon from '~icons/lucide/info';
           A modern Ember.js application built with TypeScript, Vite, Tailwind
           CSS, and WarpDrive.
         </p>
-        <div class="flex justify-center gap-4">
-          <LinkTo @route="demo.notifications-demo" class="btn btn-primary">
-            <Icon @icon={{BellIcon}} class="h-5 w-5" />
-            Try Notifications
-          </LinkTo>
-          <LinkTo @route="demo.modals-demo" class="btn btn-outline">
-            <Icon @icon={{InfoIcon}} class="h-5 w-5" />
-            Try Modals
-          </LinkTo>
-        </div>
       </div>
     </div>
   </div>
@@ -103,40 +91,6 @@ import InfoIcon from '~icons/lucide/info';
             </p>
           </div>
         </div>
-
-        <div class="flex gap-4">
-          <div class="flex-shrink-0">
-            <div class="badge badge-neutral badge-lg">
-              <Icon @icon={{BellIcon}} class="h-5 w-5" />
-            </div>
-          </div>
-          <div>
-            <h3 class="mb-2 text-lg font-bold">Notifications System</h3>
-            <p class="text-base-content/80">
-              Toast notifications with auto-dismiss and customizable positions.
-            </p>
-            <LinkTo
-              @route="demo.notifications-demo"
-              class="link link-primary"
-            >Try it out</LinkTo>
-          </div>
-        </div>
-
-        <div class="flex gap-4">
-          <div class="flex-shrink-0">
-            <div class="badge badge-neutral badge-lg">
-              <Icon @icon={{InfoIcon}} class="h-5 w-5" />
-            </div>
-          </div>
-          <div>
-            <h3 class="mb-2 text-lg font-bold">Modal Dialogs</h3>
-            <p class="text-base-content/80">
-              Promise-based modals with DaisyUI styling and confirm dialogs.
-            </p>
-            <LinkTo @route="demo.modals-demo" class="link link-primary">Try it
-              out</LinkTo>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -147,7 +101,7 @@ import InfoIcon from '~icons/lucide/info';
     <p class="text-base-content/80 mx-auto max-w-2xl text-center">
       Start building your application by editing
       <code class="bg-base-200 rounded px-2 py-1">app/templates/index.gts</code>
-      and exploring the demo pages to see what's possible.
+      and creating your routes and components.
     </p>
   </div>
 </template>
