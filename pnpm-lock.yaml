@@ -30,8 +30,8 @@ importers:
         specifier: 5.8.0
         version: 5.8.0(@glint/template@1.6.2)(@warp-drive/core@5.8.0(@babel/core@7.28.5)(@glint/template@1.6.2))
       daisyui:
-        specifier: ^5.3.9
-        version: 5.3.9
+        specifier: ^5.3.10
+        version: 5.3.10
       tailwind-merge:
         specifier: ^3.3.1
         version: 3.3.1
@@ -2862,8 +2862,8 @@ packages:
   dag-map@2.0.2:
     resolution: {integrity: sha512-xnsprIzYuDeiyu5zSKwilV/ajRHxnoMlAhEREfyfTgTSViMVY2fGP1ZcHJbtwup26oCkofySU/m6oKJ3HrkW7w==}
 
-  daisyui@5.3.9:
-    resolution: {integrity: sha512-741x1pGGSGHcrBYtdE7iKbqW1OoiijYdAZ8oJPZR9MhSKLcMBlHjKfN3YlM2/K7t5jd7O0sg4SqkVNPylalRFw==}
+  daisyui@5.3.10:
+    resolution: {integrity: sha512-vmjyPmm0hvFhA95KB6uiGmWakziB2pBv6CUcs5Ka/3iMBMn9S+C3SZYx9G9l2JrgTZ1EFn61F/HrPcwaUm2kLQ==}
 
   data-urls@5.0.0:
     resolution: {integrity: sha512-ZYP5VBHshaDAiVZxjbRVcFJpc+4xGgT0bK3vzy1HLN8jTO975HEbuYzZJcHoQEY5K1a0z8YayJkyVETa08eNTg==}
@@ -9831,7 +9831,7 @@ snapshots:
 
   dag-map@2.0.2: {}
 
-  daisyui@5.3.9: {}
+  daisyui@5.3.10: {}
 
   data-urls@5.0.0:
     dependencies:
