@@ -67,7 +67,7 @@
     "@glimmer/component": "^2.0.0",
     "@glint/core": "^1.5.2",
     "@glint/ember-tsc": "^1.0.4",
-    "@glint/template": "^1.6.2",
+    "@glint/template": "^1.7.2",
     "@glint/tsserver-plugin": "^2.0.4",
     "@iconify-json/lucide": "^1.2.71",
     "@rollup/plugin-babel": "^6.1.0",
