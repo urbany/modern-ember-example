@@ -1,10 +1,10 @@
 import { service } from '@ember/service';
 import type { RequestContext } from '@warp-drive/core/types/request';
 import type { NextFn, Handler } from '@warp-drive/core/request';
-import type SessionService from '../services/session';
+import type Session from '../services/session';
 
 export default class AuthHandler implements Handler {
-  @service declare session: SessionService;
+  @service declare session: Session;
 
   request<T>(context: RequestContext, next: NextFn<T>) {
     const headers = new Headers(context.request.headers);

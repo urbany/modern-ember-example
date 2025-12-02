@@ -7,10 +7,10 @@ type Data = {
   };
 };
 
-export default class SessionService extends Service<Data> {}
+export default class Session extends Service<Data> {}
 
 declare module '@ember/service' {
   interface Registry {
-    session: SessionService;
+    session: Session;
   }
 }

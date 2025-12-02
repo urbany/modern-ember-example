@@ -14,10 +14,10 @@ module('Integration | Component | notifications-container', function (hooks) {
   });
 
   test('it renders with notifications', async function (assert) {
-    const notificationsService = this.owner.lookup('service:notifications');
+    const notifications = this.owner.lookup('service:notifications');
 
     // Add a notification
-    notificationsService.success('Test notification');
+    notifications.success('Test notification');
 
     await render(<template><NotificationsContainer /></template>);
 

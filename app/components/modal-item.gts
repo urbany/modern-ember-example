@@ -2,7 +2,7 @@ import Component from '@glimmer/component';
 import { service } from '@ember/service';
 import { on } from '@ember/modifier';
 import type { Modal } from '../types/modal';
-import type ModalsService from '../services/modals';
+import type Modals from '../services/modals';
 
 export interface ModalItemSignature {
   Args: {
@@ -17,7 +17,7 @@ export interface ModalItemSignature {
  * Renders a single modal with DaisyUI modal styling and controls.
  */
 export default class ModalItem extends Component<ModalItemSignature> {
-  @service declare modals: ModalsService;
+  @service declare modals: Modals;
 
   /**
    * Get the modal box class based on modal size

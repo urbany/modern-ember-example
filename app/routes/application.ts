@@ -1,11 +1,11 @@
 import Route from '@ember/routing/route';
 import { service } from '@ember/service';
-import type SessionService from '../services/session';
-import type ThemeService from '../services/theme';
+import type Session from '../services/session';
+import type Theme from '../services/theme';
 
 export default class ApplicationRoute extends Route {
-  @service declare session: SessionService;
-  @service declare theme: ThemeService;
+  @service declare session: Session;
+  @service declare theme: Theme;
 
   async beforeModel() {
     // Initialize theme service early to load saved theme
