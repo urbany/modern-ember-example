@@ -3,7 +3,7 @@ import { tracked } from '@glimmer/tracking';
 import type Owner from '@ember/owner';
 import { createStringStorage } from '../utils/local-storage';
 
-export default class ThemeService extends Service {
+export default class Theme extends Service {
   @tracked currentTheme: string = 'light';
 
   private themeStorage: ReturnType<typeof createStringStorage>;

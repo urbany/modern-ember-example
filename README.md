@@ -165,9 +165,9 @@ A complete toast notification system with the following features:
 
 ```typescript
 import { service } from '@ember/service';
-import type NotificationsService from 'modern-ember-example/services/notifications';
+import type Notifications from 'modern-ember-example/services/notifications';
 
-@service declare notifications: NotificationsService;
+@service declare notifications: Notifications;
 
 // Show notifications
 this.notifications.success('Operation completed!');

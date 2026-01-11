@@ -179,7 +179,7 @@ The project name appears in these locations:
 1. **Module paths** - TypeScript imports use the module prefix
 
    ```typescript
-   import type NotificationsService from 'PROJECT_NAME/services/notifications';
+   import type Notifications from 'PROJECT_NAME/services/notifications';
    ```
 
 2. **Configuration** - Build and environment config

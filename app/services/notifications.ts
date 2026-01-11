@@ -18,9 +18,9 @@ import type {
  * ```typescript
  * // In a component or route
  * import { service } from '@ember/service';
- * import type NotificationsService from 'modern-ember-example/services/notifications';
+ * import type Notifications from 'modern-ember-example/services/notifications';
  *
- * @service declare notifications: NotificationsService;
+ * @service declare notifications: Notifications;
  *
  * // Show notifications
  * this.notifications.success('Operação realizada com sucesso!');
@@ -39,7 +39,7 @@ import type {
  * });
  * ```
  */
-export default class NotificationsService extends Service {
+export default class Notifications extends Service {
   /** Active notifications */
   @tracked notifications = new TrackedArray<Notification>([]);
 
@@ -205,9 +205,9 @@ export default class NotificationsService extends Service {
 // Don't remove this declaration: this is what enables TypeScript to resolve
 // this service using `Owner.lookup('service:notifications')`, as well
 // as to check when you pass the service name as an argument to the decorator,
-// like `@service('notifications') declare altName: NotificationsService;`.
+// like `@service('notifications') declare altName: Notifications;`.
 declare module '@ember/service' {
   interface Registry {
-    notifications: NotificationsService;
+    notifications: Notifications;
   }
 }

@@ -1,6 +1,6 @@
 import Component from '@glimmer/component';
 import { service } from '@ember/service';
-import type ModalsService from '../services/modals';
+import type Modals from '../services/modals';
 import ModalItem from './modal-item';
 
 export interface ModalsContainerSignature {
@@ -22,7 +22,7 @@ export interface ModalsContainerSignature {
  * ```
  */
 export default class ModalsContainer extends Component<ModalsContainerSignature> {
-  @service declare modals: ModalsService;
+  @service declare modals: Modals;
 
   <template>
     {{#each this.modals.modals as |modal|}}

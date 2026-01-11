@@ -2,7 +2,7 @@ import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { service } from '@ember/service';
 import { on } from '@ember/modifier';
-import type ThemeService from 'modern-ember-example/services/theme';
+import type Theme from 'modern-ember-example/services/theme';
 import Icon from 'modern-ember-example/components/icon';
 
 // Import icons
@@ -10,7 +10,7 @@ import PaletteIcon from '~icons/lucide/palette';
 import RotateCcwIcon from '~icons/lucide/rotate-ccw';
 
 export default class ThemeSelectorComponent extends Component {
-  @service declare theme: ThemeService;
+  @service declare theme: Theme;
 
   get themeOptions() {
     return [
