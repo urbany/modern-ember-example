@@ -1,6 +1,5 @@
 import Component from '@glimmer/component';
-import { action } from '@ember/object';
-import { service } from '@ember/service';
+import { inject as service } from '@ember/service';
 import { on } from '@ember/modifier';
 import type Theme from 'modern-ember-example/services/theme';
 import Icon from 'modern-ember-example/components/icon';
@@ -136,16 +135,14 @@ export default class ThemeSelectorComponent extends Component {
     ];
   }
 
-  @action
-  selectTheme(event: Event) {
+  selectTheme = (event: Event) => {
     const target = event.target as HTMLInputElement;
     this.theme.setTheme(target.value);
-  }
+  };
 
-  @action
-  resetTheme() {
+  resetTheme = () => {
     this.theme.resetTheme();
-  }
+  };
 
   <template>
     <div class="dropdown dropdown-end">
