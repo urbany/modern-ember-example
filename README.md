@@ -91,8 +91,7 @@ You will need the following things properly installed on your computer.
 - [Git](https://git-scm.com/)
 - [Node.js](https://nodejs.org/) (>= 18)
 - [pnpm](https://pnpm.io/)
-- [Ember CLI](https://cli.emberjs.com/release/)
-- [Google Chrome](https://google.com/chrome/) (for running tests)
+- [Google Chrome](https://google.com/chrome/)
 
 ## Installation (For Development of This Boilerplate)
 
@@ -112,12 +111,11 @@ pnpm install
 
 ### Code Generators
 
-Make use of the many generators for code, try `ember help generate` for more details
+Make use of the many generators for code, try `pnpm ember help generate` for more details
 
 ### Running Tests
 
 - `pnpm test`
-- `pnpm test --server`
 
 ### Linting
 
@@ -126,7 +124,7 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 ### Building
 
-- `vite build --mode development` (development)
+- `pnpm vite build --mode development` (development)
 - `pnpm build` (production)
 
 ### Deploying
