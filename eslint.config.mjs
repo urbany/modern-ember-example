@@ -61,6 +61,7 @@ export default ts.config(
   },
   {
     files: ['**/*.js'],
+    ignores: ['config/**/*.js', 'ember-cli-build.js'],
     languageOptions: {
       parser: babelParser,
     },
