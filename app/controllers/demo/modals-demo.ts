@@ -1,6 +1,6 @@
 import Controller from '@ember/controller';
 import { service } from '@ember/service';
-import type ModalsService from '../../services/modals';
+import type Modals from '../../services/modals';
 
 export default class ModalsDemoController extends Controller {
   @service declare modals: Modals;

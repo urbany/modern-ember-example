@@ -1,6 +1,6 @@
 import Controller from '@ember/controller';
 import { service } from '@ember/service';
-import type NotificationsService from '../../services/notifications';
+import type Notifications from '../../services/notifications';
 
 export default class NotificationsDemoController extends Controller {
   @service declare notifications: Notifications;
