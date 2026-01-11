@@ -291,7 +291,8 @@ import BellIcon from '~icons/lucide/bell';
             </p>
 
             <div class="mockup-code">
-              <pre data-prefix="$"><code>git clone &lt;repository-url&gt;</code></pre>
+              <pre data-prefix="$"><code>git clone
+                  &lt;git@github.com:urbany/modern-ember-example.git&gt;</code></pre>
               <pre data-prefix="$"><code>cd &lt;project-name&gt;</code></pre>
               <pre data-prefix="$"><code>pnpm install</code></pre>
               <pre data-prefix="$"><code>pnpm start</code></pre>

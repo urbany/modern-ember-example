@@ -14,7 +14,7 @@ This repository serves as a boilerplate for creating new Ember.js projects. To i
 
 ```bash
 # Clone this repository
-git clone <repository-url> my-new-project
+git clone git@github.com:urbany/modern-ember-example.git my-new-project
 cd my-new-project
 
 # Run the initialization script (dry-run first to preview changes)
@@ -98,7 +98,7 @@ You will need the following things properly installed on your computer.
 If you're working on the boilerplate itself (not creating a new project):
 
 ```bash
-git clone <repository-url>
+git clone git@github.com:urbany/modern-ember-example.git
 cd modern-ember-example
 pnpm install
 ```
