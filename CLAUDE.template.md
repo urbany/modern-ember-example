@@ -347,4 +347,4 @@ Uses **pnpm** (not npm/yarn) - ensure to use `pnpm install` and `pnpm` commands.
 
 ## Node Version
 
-Requires Node.js >= 18
+Requires Node.js >= 20
