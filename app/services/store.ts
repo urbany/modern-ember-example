@@ -19,8 +19,8 @@ export default {
       handlers: [authHandler],
     });
 
-    const storeService = new Store(args);
+    const store = new Store(args);
 
-    return storeService;
+    return store;
   },
 };

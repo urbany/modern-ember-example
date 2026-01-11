@@ -25,7 +25,7 @@ type ResolverEntry<T> = {
  * the notifications service, but focused on modal dialogs that can be
  * confirmed, dismissed, or rendered with custom components.
  */
-export default class ModalsService extends Service {
+export default class Modals extends Service {
   /** Active modal stack */
   @tracked modals = new TrackedArray<Modal>([]);
 
@@ -220,6 +220,6 @@ export default class ModalsService extends Service {
 
 declare module '@ember/service' {
   interface Registry {
-    modals: ModalsService;
+    modals: Modals;
   }
 }

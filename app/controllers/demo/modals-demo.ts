@@ -3,7 +3,7 @@ import { service } from '@ember/service';
 import type ModalsService from '../../services/modals';
 
 export default class ModalsDemoController extends Controller {
-  @service declare modals: ModalsService;
+  @service declare modals: Modals;
 
   showAlert = async (): Promise<void> => {
     await this.modals.alert('This is an alert modal!');

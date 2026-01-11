@@ -3,7 +3,7 @@ import { service } from '@ember/service';
 import type NotificationsService from '../../services/notifications';
 
 export default class NotificationsDemoController extends Controller {
-  @service declare notifications: NotificationsService;
+  @service declare notifications: Notifications;
 
   showSuccess = (): void => {
     this.notifications.success('Operação realizada com sucesso!');

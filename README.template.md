@@ -133,9 +133,9 @@ A complete toast notification system:
 
 ```typescript
 import { service } from '@ember/service';
-import type NotificationsService from 'PROJECT_NAME/services/notifications';
+import type Notifications from 'PROJECT_NAME/services/notifications';
 
-@service declare notifications: NotificationsService;
+@service declare notifications: Notifications;
 
 // Show notifications
 this.notifications.success('Operation completed!');
@@ -158,9 +158,9 @@ Promise-based modal dialogs with DaisyUI styling:
 
 ```typescript
 import { service } from '@ember/service';
-import type ModalsService from 'PROJECT_NAME/services/modals';
+import type Modals from 'PROJECT_NAME/services/modals';
 
-@service declare modals: ModalsService;
+@service declare modals: Modals;
 
 // Show a modal and wait for user action
 const result = await this.modals.confirm({

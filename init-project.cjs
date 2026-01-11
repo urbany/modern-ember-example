@@ -191,7 +191,7 @@ class ProjectInitializer {
           this.info('Or use --force flag to run anyway (not recommended).');
           return false;
         }
-      } catch (error) {
+      } catch {
         // If git command fails, continue (might not be a git repo)
       }
     }

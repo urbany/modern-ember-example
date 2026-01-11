@@ -1,6 +1,6 @@
 import Component from '@glimmer/component';
 import { service } from '@ember/service';
-import type NotificationsService from '../services/notifications';
+import type Notifications from '../services/notifications';
 import NotificationItem from './notification-item';
 
 export interface NotificationsContainerSignature {
@@ -22,7 +22,7 @@ export interface NotificationsContainerSignature {
  * ```
  */
 export default class NotificationsContainer extends Component<NotificationsContainerSignature> {
-  @service declare notifications: NotificationsService;
+  @service declare notifications: Notifications;
 
   /**
    * Get the toast positioning class based on service configuration
