@@ -1,6 +1,7 @@
 import Component from '@glimmer/component';
-import { inject as service } from '@ember/service';
+import { service } from '@ember/service';
 import { on } from '@ember/modifier';
+import { eq } from 'ember-truth-helpers';
 import type Theme from 'modern-ember-example/services/theme';
 import Icon from 'modern-ember-example/components/icon';
 
@@ -174,6 +175,10 @@ export default class ThemeSelectorComponent extends Component {
                 name="theme-selector"
                 class="theme-controller radio radio-sm"
                 value={{themeOption.value}}
+                checked={{if
+                  (eq this.theme.currentTheme themeOption.value)
+                  "checked"
+                }}
                 {{on "change" this.selectTheme}}
               />
               <div class="flex items-center gap-2">

@@ -6,7 +6,8 @@
  * This script helps initialize a new project from this boilerplate by:
  * - Renaming all instances of "modern-ember-example" to your new project name
  * - Replacing README.md with a clean template (README.template.md)
- * - Replacing CLAUDE.md with a clean template (CLAUDE.template.md)
+ * - Replacing AGENTS.md with a clean template (AGENTS.template.md)
+ * - Creating CLAUDE.md pointer file to AGENTS.md
  * - Renaming the .code-workspace file
  * - Optionally removing the .git directory and initializing a new repository
  * - Optionally installing dependencies with pnpm
@@ -348,12 +349,12 @@ class ProjectInitializer {
     );
   }
 
-  replaceClaudeFromTemplate() {
-    const templatePath = path.join(this.projectRoot, 'CLAUDE.template.md');
-    const claudePath = path.join(this.projectRoot, 'CLAUDE.md');
+  replaceAgentsFromTemplate() {
+    const templatePath = path.join(this.projectRoot, 'AGENTS.template.md');
+    const agentsPath = path.join(this.projectRoot, 'AGENTS.md');
 
     if (!fs.existsSync(templatePath)) {
-      this.warn('CLAUDE.template.md not found, skipping CLAUDE.md replacement');
+      this.warn('AGENTS.template.md not found, skipping AGENTS.md replacement');
       return;
     }
 
@@ -363,14 +364,30 @@ class ProjectInitializer {
     content = content.replace(/PROJECT_NAME/g, this.newProjectName);
 
     if (!this.dryRun) {
-      fs.writeFileSync(claudePath, content, 'utf8');
+      fs.writeFileSync(agentsPath, content, 'utf8');
     }
 
     this.logChange(
       'Replaced',
-      'CLAUDE.md',
+      'AGENTS.md',
       'from template with project-specific content'
     );
+  }
+
+  createClaudePointer() {
+    const claudePath = path.join(this.projectRoot, 'CLAUDE.md');
+    const content = `# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+For detailed project documentation, architecture, and development guidelines, please see [AGENTS.md](AGENTS.md).
+`;
+
+    if (!this.dryRun) {
+      fs.writeFileSync(claudePath, content, 'utf8');
+    }
+
+    this.logChange('Created', 'CLAUDE.md', 'pointer file to AGENTS.md');
   }
 
   replaceIndexFromTemplate() {
@@ -460,20 +477,26 @@ class ProjectInitializer {
       'app/controllers/demo/modals-demo.ts',
       // Notification system
       'app/services/notifications.ts',
-      'app/components/notification-item.gts',
-      'app/components/notifications-container.gts',
+      'app/components/notifications/item.gts',
+      'app/components/notifications/container.gts',
       'app/types/notification.ts',
       'tests/integration/components/notification-item-test.gts',
       'tests/integration/components/notifications-container-test.gts',
       'tests/unit/services/notifications-test.ts',
       // Modal system
       'app/services/modals.ts',
-      'app/components/modal-item.gts',
-      'app/components/modals-container.gts',
+      'app/components/modals/item.gts',
+      'app/components/modals/container.gts',
+      'app/components/modals/nested-demo.gts',
       'app/types/modal.ts',
     ];
 
-    const dirsToDelete = ['app/templates/demo', 'app/controllers/demo'];
+    const dirsToDelete = [
+      'app/templates/demo',
+      'app/controllers/demo',
+      'app/components/notifications',
+      'app/components/modals',
+    ];
 
     for (const file of filesToDelete) {
       const filePath = path.join(this.projectRoot, file);
@@ -639,7 +662,8 @@ class ProjectInitializer {
     this.updateFiles();
     this.updatePackageJson();
     this.replaceReadmeFromTemplate();
-    this.replaceClaudeFromTemplate();
+    this.replaceAgentsFromTemplate();
+    this.createClaudePointer();
     this.replaceApplicationFromTemplate();
     this.replaceIndexFromTemplate();
     this.deleteBoilerplateDemo();
@@ -675,7 +699,7 @@ class ProjectInitializer {
         '1. Update package.json with your author, description, and repository info'
       );
       this.info('2. Review and update README.md with your project details');
-      this.info('3. Review and update CLAUDE.md if needed');
+      this.info('3. Review and update AGENTS.md if needed');
       if (this.skipInstall) {
         this.info('4. Run: pnpm install');
       }

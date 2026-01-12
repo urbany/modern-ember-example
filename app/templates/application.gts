@@ -1,6 +1,7 @@
 import { pageTitle } from 'ember-page-title';
-import NotificationsContainer from 'modern-ember-example/components/notifications-container';
-import ModalsContainer from 'modern-ember-example/components/modals-container';
+import { PortalTargets } from 'ember-primitives';
+import NotificationsContainer from 'modern-ember-example/components/notifications/container';
+import ModalsContainer from 'modern-ember-example/components/modals/container';
 
 <template>
   {{pageTitle "Modern Ember Example"}}
@@ -18,4 +19,7 @@ import ModalsContainer from 'modern-ember-example/components/modals-container';
 
   {{! Global modals container }}
   <ModalsContainer />
+
+  {{! Portal targets for modals, tooltips, popovers, etc. }}
+  <PortalTargets />
 </template>

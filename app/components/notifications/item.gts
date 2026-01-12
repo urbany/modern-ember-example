@@ -1,7 +1,8 @@
 import Component from '@glimmer/component';
 import { on } from '@ember/modifier';
-import type { Notification } from '../types/notification';
-import Icon from './icon';
+import tw from '../../helpers/tw';
+import type { Notification } from '../../types/notification';
+import Icon from '../icon';
 import XIcon from '~icons/lucide/x';
 import CheckCircleIcon from '~icons/lucide/check-circle';
 import XCircleIcon from '~icons/lucide/x-circle';
@@ -26,15 +27,14 @@ export default class NotificationItem extends Component<NotificationItemSignatur
    * Get the alert class based on notification type
    */
   get alertClass(): string {
-    const baseClasses = 'alert shadow-lg';
-    const typeClasses = {
+    const typeClasses: Record<Notification['type'], string> = {
       success: 'alert-success',
       error: 'alert-error',
       warning: 'alert-warning',
       info: 'alert-info',
     };
 
-    return `${baseClasses} ${typeClasses[this.args.notification.type]}`;
+    return tw('alert shadow-lg', typeClasses[this.args.notification.type]);
   }
 
   /**

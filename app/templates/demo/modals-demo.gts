@@ -77,6 +77,26 @@ interface ModalsDemoSignature {
           </div>
         </div>
       </div>
+
+      {{! Nested Modal Demo }}
+      <div class="card bg-base-100 shadow-xl">
+        <div class="card-body">
+          <h2 class="card-title text-secondary">Nested Modal</h2>
+          <div class="space-y-2">
+            <button
+              type="button"
+              class="btn btn-secondary btn-sm w-full"
+              {{on "click" @controller.showNestedModal}}
+            >
+              Modal on Top of Modal
+            </button>
+          </div>
+          <p class="mt-2 text-xs opacity-70">
+            Demonstrates PortalTargets working - opens a modal on top of another
+            modal
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </template> satisfies TOC<ModalsDemoSignature>;

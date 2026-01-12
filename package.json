@@ -43,6 +43,8 @@
     "@warp-drive/legacy": "5.8.0",
     "@warp-drive/utilities": "5.8.0",
     "daisyui": "^5.5.14",
+    "ember-primitives": "^0.52.0",
+    "ember-truth-helpers": "^5.0.0",
     "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {

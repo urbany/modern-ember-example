@@ -1,7 +1,8 @@
 import Component from '@glimmer/component';
 import { service } from '@ember/service';
-import type Notifications from '../services/notifications';
-import NotificationItem from './notification-item';
+import tw from '../../helpers/tw';
+import type Notifications from '../../services/notifications';
+import NotificationItem from './item';
 
 export interface NotificationsContainerSignature {
   Args: Record<string, never>;
@@ -13,7 +14,8 @@ export interface NotificationsContainerSignature {
  *
  * Displays all active notifications using DaisyUI toast positioning.
  * Automatically tracks the notifications service and renders notifications
- * in the configured position.
+ * in the configured position. Since this container is rendered at the root
+ * level, Portal is not needed - fixed positioning handles z-index properly.
  *
  * @example
  * ```hbs
@@ -29,7 +31,7 @@ export default class NotificationsContainer extends Component<NotificationsConta
    */
   get toastClass(): string {
     const position = this.notifications.position;
-    const positionClasses = {
+    const positionClasses: Record<typeof position, string> = {
       'top-start': 'toast-top toast-start',
       'top-center': 'toast-top toast-center',
       'top-end': 'toast-top toast-end',
@@ -38,7 +40,7 @@ export default class NotificationsContainer extends Component<NotificationsConta
       'bottom-end': 'toast-bottom toast-end',
     };
 
-    return `toast fixed ${positionClasses[position]} z-40 p-4`;
+    return tw('toast fixed z-40 p-4', positionClasses[position]);
   }
 
   /**

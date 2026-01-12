@@ -1,7 +1,7 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'modern-ember-example/tests/helpers';
 import { render } from '@ember/test-helpers';
-import NotificationsContainer from 'modern-ember-example/components/notifications-container';
+import NotificationsContainer from 'modern-ember-example/components/notifications/container';
 
 module('Integration | Component | notifications-container', function (hooks) {
   setupRenderingTest(hooks);

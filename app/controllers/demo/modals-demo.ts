@@ -34,4 +34,17 @@ export default class ModalsDemoController extends Controller {
       'Custom component modals will be implemented next.'
     );
   };
+
+  showNestedModal = async (): Promise<void> => {
+    const NestedDemo = await import('../../components/modals/nested-demo');
+
+    // Open first modal with custom component that can open nested modals
+    await this.modals.openComponent({
+      title: 'First Modal',
+      component: NestedDemo.default,
+      componentArgs: {},
+      cancelText: 'Close',
+      dismissible: true,
+    });
+  };
 }

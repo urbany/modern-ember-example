@@ -2,53 +2,63 @@ import Service from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 import type Owner from '@ember/owner';
 import { createStringStorage } from '../utils/local-storage';
+import { colorScheme, sync, prefers } from 'ember-primitives/color-scheme';
 
 export default class Theme extends Service {
   @tracked currentTheme: string = 'light';
 
   private themeStorage: ReturnType<typeof createStringStorage>;
 
-  themes = [
+  // Light themes (based on daisyUI defaults)
+  private lightThemes = [
     'light',
-    'dark',
     'cupcake',
     'bumblebee',
     'emerald',
     'corporate',
-    'synthwave',
     'retro',
     'cyberpunk',
     'valentine',
-    'halloween',
     'garden',
-    'forest',
-    'aqua',
     'lofi',
     'pastel',
     'fantasy',
     'wireframe',
+    'cmyk',
+    'autumn',
+    'acid',
+    'lemonade',
+    'winter',
+    'nord',
+    'caramellatte',
+    'silk',
+  ];
+
+  // Dark themes (based on daisyUI defaults)
+  private darkThemes = [
+    'dark',
+    'synthwave',
+    'halloween',
+    'forest',
+    'aqua',
     'black',
     'luxury',
     'dracula',
-    'cmyk',
-    'autumn',
     'business',
-    'acid',
-    'lemonade',
     'night',
     'coffee',
-    'winter',
     'dim',
-    'nord',
     'sunset',
-    'caramellatte',
     'abyss',
-    'silk',
   ];
+
+  themes = [...this.lightThemes, ...this.darkThemes];
 
   constructor(owner: Owner) {
     super(owner);
     this.themeStorage = createStringStorage('theme');
+    // Initialize color-scheme utility
+    sync();
     this.loadTheme();
   }
 
@@ -58,11 +68,8 @@ export default class Theme extends Service {
       this.currentTheme = savedTheme;
       this.applyTheme(savedTheme);
     } else {
-      // Check for system preference
-      const prefersDark = window.matchMedia(
-        '(prefers-color-scheme: dark)'
-      ).matches;
-      const defaultTheme = prefersDark ? 'dark' : 'light';
+      // Check for system preference using color-scheme utility
+      const defaultTheme = prefers.dark() ? 'dark' : 'light';
       this.currentTheme = defaultTheme;
       this.applyTheme(defaultTheme);
     }
@@ -77,16 +84,29 @@ export default class Theme extends Service {
   }
 
   resetTheme() {
+    // Remove stored theme preference
     this.themeStorage.remove();
-    const prefersDark = window.matchMedia(
-      '(prefers-color-scheme: dark)'
-    ).matches;
-    const defaultTheme = prefersDark ? 'dark' : 'light';
+
+    // Check system preference and apply default theme
+    const defaultTheme = prefers.dark() ? 'dark' : 'light';
     this.currentTheme = defaultTheme;
     this.applyTheme(defaultTheme);
   }
 
   private applyTheme(theme: string) {
+    // Apply daisyUI theme
     document.documentElement.setAttribute('data-theme', theme);
+
+    // Sync CSS color-scheme property for better browser integration
+    const scheme = this.darkThemes.includes(theme) ? 'dark' : 'light';
+    colorScheme.update(scheme);
+  }
+
+  get isDarkTheme(): boolean {
+    return this.darkThemes.includes(this.currentTheme);
+  }
+
+  get isLightTheme(): boolean {
+    return this.lightThemes.includes(this.currentTheme);
   }
 }
