@@ -219,8 +219,7 @@ interface NotificationsDemoSignature {
       <pre data-prefix="$"><code>// In any component or route</code></pre>
       <pre data-prefix=">"><code>import &#123; service &#125; from
           '@ember/service';</code></pre>
-      <pre data-prefix=">"><code>@service declare notifications:
-          Notifications;</code></pre>
+      <pre data-prefix=">"><code>@service declare notifications: Notifications;</code></pre>
       <pre data-prefix=" "><code></code></pre>
       <pre data-prefix=">"><code>this.notifications.success('Operation
           completed!');</code></pre>
