@@ -24,5 +24,9 @@
       "source.fixAll.eslint": "explicit",
       "source.fixAll.stylelint": "explicit",
     },
+    "chat.tools.terminal.autoApprove": {
+      "git": true,
+      "gh": true,
+    },
   },
 }
