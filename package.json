@@ -43,7 +43,7 @@
     "@warp-drive/legacy": "5.8.1",
     "@warp-drive/utilities": "5.8.1",
     "daisyui": "^5.5.14",
-    "ember-primitives": "^0.52.0",
+    "ember-primitives": "^0.53.0",
     "ember-truth-helpers": "^5.0.0",
     "tailwind-merge": "^3.4.0"
   },
@@ -76,7 +76,7 @@
     "@tailwindcss/vite": "^4.1.18",
     "@types/qunit": "^2.19.13",
     "@types/rsvp": "^4.0.9",
-    "babel-plugin-ember-template-compilation": "^3.1.0",
+    "babel-plugin-ember-template-compilation": "^4.0.0",
     "concurrently": "^9.2.1",
     "decorator-transforms": "^2.3.1",
     "ember-auto-import": "^2.12.0",
@@ -97,7 +97,7 @@
     "eslint-plugin-ember": "^12.7.5",
     "eslint-plugin-n": "^17.23.2",
     "eslint-plugin-qunit": "^8.2.5",
-    "globals": "^16.5.0",
+    "globals": "^17.0.0",
     "lint-staged": "^16.2.7",
     "prettier": "^3.7.4",
     "prettier-plugin-ember-template-tag": "^2.1.2",
@@ -113,7 +113,7 @@
     "tracked-built-ins": "^4.1.0",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.53.0",
-    "unplugin-icons": "^22.5.0",
+    "unplugin-icons": "^23.0.1",
     "vite": "^7.3.1"
   },
   "engines": {
