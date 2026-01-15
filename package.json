@@ -99,7 +99,7 @@
     "eslint-plugin-qunit": "^8.2.5",
     "globals": "^17.0.0",
     "lint-staged": "^16.2.7",
-    "prettier": "^3.7.4",
+    "prettier": "^3.8.0",
     "prettier-plugin-ember-template-tag": "^2.1.2",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "qunit": "^2.25.0",
