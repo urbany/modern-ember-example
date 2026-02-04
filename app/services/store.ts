@@ -12,8 +12,7 @@ export default {
     setOwner(authHandler, owner);
 
     const Store = useLegacyStore({
-      linksMode: true,
-      legacyRequests: false,
+      linksMode: false,
       cache: JSONAPICache,
       schemas: [UserSchema],
       handlers: [authHandler],

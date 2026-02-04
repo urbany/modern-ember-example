@@ -1,6 +1,6 @@
 import Service from '@ember/service';
 import { tracked } from '@glimmer/tracking';
-import { TrackedArray } from 'tracked-built-ins';
+import { trackedArray } from '@ember/reactive/collections';
 import type Owner from '@ember/owner';
 import type {
   AlertModalOptions,
@@ -27,7 +27,7 @@ type ResolverEntry<T> = {
  */
 export default class Modals extends Service {
   /** Active modal stack */
-  @tracked modals = new TrackedArray<Modal>([]);
+  modals = trackedArray<Modal>([]);
 
   /** Service-level configuration */
   @tracked config: ModalsConfig = {
@@ -207,7 +207,7 @@ export default class Modals extends Service {
   }
 
   private removeModal(id: string): void {
-    const index = this.modals.findIndex((modal) => modal.id === id);
+    const index = this.modals.findIndex((modal: Modal) => modal.id === id);
     if (index !== -1) {
       this.modals.splice(index, 1);
     }

@@ -1,6 +1,6 @@
 import Service from '@ember/service';
 import { tracked } from '@glimmer/tracking';
-import { TrackedArray } from 'tracked-built-ins';
+import { trackedArray } from '@ember/reactive/collections';
 import type Owner from '@ember/owner';
 import type {
   Notification,
@@ -41,7 +41,7 @@ import type {
  */
 export default class Notifications extends Service {
   /** Active notifications */
-  @tracked notifications = new TrackedArray<Notification>([]);
+  notifications = trackedArray<Notification>([]);
 
   /** Service configuration */
   @tracked config: NotificationsConfig = {
@@ -150,7 +150,9 @@ export default class Notifications extends Service {
    * Remove a notification by ID
    */
   remove(id: string): void {
-    const index = this.notifications.findIndex((n) => n.id === id);
+    const index = this.notifications.findIndex(
+      (n: Notification) => n.id === id
+    );
     if (index !== -1) {
       this.notifications.splice(index, 1);
     }
