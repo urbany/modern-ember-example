@@ -218,10 +218,10 @@ importers:
         version: 40.0.0(stylelint@17.3.0(typescript@5.9.3))
       stylelint-config-tailwindcss:
         specifier: ^1.0.1
-        version: 1.0.1(stylelint@17.3.0(typescript@5.9.3))(tailwindcss@4.1.18)
+        version: 1.0.1(stylelint@17.3.0(typescript@5.9.3))(tailwindcss@4.2.1)
       tailwindcss:
-        specifier: ^4.1.18
-        version: 4.1.18
+        specifier: ^4.2.1
+        version: 4.2.1
       testem:
         specifier: ^3.17.0
         version: 3.17.0(ejs@3.1.10)(handlebars@4.7.8)(underscore@1.13.7)
@@ -5883,6 +5883,9 @@ packages:
 
   tailwindcss@4.1.18:
     resolution: {integrity: sha512-4+Z+0yiYyEtUVCScyfHCxOYP06L5Ne+JiHhY2IjR2KWMIWhJOYZKLSGZaP5HkZ8+bY0cxfzwDE5uOmzFXyIwxw==}
+
+  tailwindcss@4.2.1:
+    resolution: {integrity: sha512-/tBrSQ36vCleJkAOsy9kbNTgaxvGbyOamC30PRePTQe/o1MFwEKHQk4Cn7BNGaPtjp+PuUrByJehM1hgxfq4sw==}
 
   tap-parser@7.0.0:
     resolution: {integrity: sha512-05G8/LrzqOOFvZhhAk32wsGiPZ1lfUrl+iV7+OkKgfofZxiceZWMHkKmow71YsyVQ8IvGBP2EjcIjE5gL4l5lA==}
@@ -13110,10 +13113,10 @@ snapshots:
       stylelint: 17.3.0(typescript@5.9.3)
       stylelint-config-recommended: 18.0.0(stylelint@17.3.0(typescript@5.9.3))
 
-  stylelint-config-tailwindcss@1.0.1(stylelint@17.3.0(typescript@5.9.3))(tailwindcss@4.1.18):
+  stylelint-config-tailwindcss@1.0.1(stylelint@17.3.0(typescript@5.9.3))(tailwindcss@4.2.1):
     dependencies:
       stylelint: 17.3.0(typescript@5.9.3)
-      tailwindcss: 4.1.18
+      tailwindcss: 4.2.1
 
   stylelint@17.3.0(typescript@5.9.3):
     dependencies:
@@ -13225,6 +13228,8 @@ snapshots:
   tailwind-merge@3.4.1: {}
 
   tailwindcss@4.1.18: {}
+
+  tailwindcss@4.2.1: {}
 
   tap-parser@7.0.0:
     dependencies:
