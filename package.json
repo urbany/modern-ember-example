@@ -72,7 +72,7 @@
     "@glint/tsserver-plugin": "^2.1.0",
     "@iconify-json/lucide": "^1.2.91",
     "@rollup/plugin-babel": "^6.1.0",
-    "@tailwindcss/vite": "^4.1.18",
+    "@tailwindcss/vite": "^4.2.1",
     "@types/qunit": "^2.19.13",
     "@types/rsvp": "^4.0.9",
     "@warp-drive/core": "~5.8.1",
