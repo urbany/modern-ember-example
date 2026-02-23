@@ -42,7 +42,7 @@
     "@warp-drive/json-api": "5.8.1",
     "@warp-drive/legacy": "5.8.1",
     "@warp-drive/utilities": "5.8.1",
-    "daisyui": "^5.5.18",
+    "daisyui": "^5.5.19",
     "ember-primitives": "^0.53.0",
     "ember-truth-helpers": "^5.0.0",
     "tailwind-merge": "^3.4.1"
