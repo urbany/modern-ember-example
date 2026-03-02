@@ -114,7 +114,7 @@
     "tailwindcss": "^4.1.18",
     "testem": "^3.17.0",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.56.0",
+    "typescript-eslint": "^8.56.1",
     "unplugin-icons": "^23.0.1",
     "vite": "^7.3.1"
   },
