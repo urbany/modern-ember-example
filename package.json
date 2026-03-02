@@ -70,7 +70,7 @@
     "@glint/ember-tsc": "^1.1.1",
     "@glint/template": "^1.7.4",
     "@glint/tsserver-plugin": "^2.1.0",
-    "@iconify-json/lucide": "^1.2.91",
+    "@iconify-json/lucide": "^1.2.95",
     "@rollup/plugin-babel": "^6.1.0",
     "@tailwindcss/vite": "^4.1.18",
     "@types/qunit": "^2.19.13",
