@@ -15,6 +15,7 @@
 import globals from 'globals';
 import js from '@eslint/js';
 import { defineConfig, globalIgnores } from 'eslint/config';
+import { fixupConfigRules } from '@eslint/compat';
 
 import ts from 'typescript-eslint';
 
@@ -43,9 +44,11 @@ const parserOptions = {
 export default defineConfig([
   globalIgnores(['dist/', 'coverage/', '!**/.*']),
   js.configs.recommended,
-  ember.configs.base,
-  ember.configs.gjs,
-  ember.configs.gts,
+  ...fixupConfigRules([
+    ember.configs.base,
+    ember.configs.gjs,
+    ember.configs.gts,
+  ]),
   ...WarpDrive,
   eslintConfigPrettier,
   /**
@@ -78,7 +81,10 @@ export default defineConfig([
       parser: ember.parser,
       parserOptions: parserOptions.esm.ts,
     },
-    extends: [...ts.configs.recommendedTypeChecked, ember.configs.gts],
+    extends: [
+      ...ts.configs.recommendedTypeChecked,
+      ...fixupConfigRules([ember.configs.gts]),
+    ],
   },
   {
     files: ['tests/**/*-test.{js,gjs,ts,gts}'],
