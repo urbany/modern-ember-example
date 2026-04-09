@@ -31,7 +31,9 @@ export interface Modal {
   /** Styling intent */
   intent: ModalIntent;
   /** Custom body component */
-  component?: import('@glint/template').ComponentLike<unknown>;
+  component?: import('@glint/template').ComponentLike<{
+    Args: { onComplete?: () => void };
+  }>;
   /** Named args passed to the custom component */
   componentArgs?: Record<string, unknown>;
   /** Additional metadata for callers */
@@ -51,7 +53,9 @@ export interface ModalOptions<T = unknown> {
   dismissible?: boolean;
   size?: ModalSize;
   intent?: ModalIntent;
-  component?: import('@glint/template').ComponentLike<unknown>;
+  component?: import('@glint/template').ComponentLike<{
+    Args: { onComplete?: () => void };
+  }>;
   componentArgs?: Record<string, unknown>;
   metadata?: Record<string, unknown>;
   /** Value returned when dismissing the modal */
@@ -75,7 +79,9 @@ export type AlertModalOptions = ModalOptions<void>;
  * Options for custom component modals
  */
 export type CustomModalOptions<T = unknown> = ModalOptions<T> & {
-  component: import('@glint/template').ComponentLike<unknown>;
+  component: import('@glint/template').ComponentLike<{
+    Args: { onComplete?: () => void };
+  }>;
 };
 
 /**
