@@ -11,7 +11,7 @@ export default class AuthHandler implements Handler {
     if (this.session.isAuthenticated) {
       headers.append(
         'Authorization',
-        `Bearer ${this.session.data.authenticated.accessToken}`
+        `Bearer ${this.session.data.authenticated.accessToken}`,
       );
     }
 

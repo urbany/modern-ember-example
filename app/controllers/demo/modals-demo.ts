@@ -11,7 +11,7 @@ export default class ModalsDemoController extends Controller {
 
   showConfirm = async (): Promise<void> => {
     const result = await this.modals.confirm(
-      'Are you sure you want to proceed?'
+      'Are you sure you want to proceed?',
     );
     console.log('Confirm result:', result);
   };
@@ -31,7 +31,7 @@ export default class ModalsDemoController extends Controller {
   showCustomComponent = async (): Promise<void> => {
     // For now, since component args are not implemented, just show a simple alert
     await this.modals.alert(
-      'Custom component modals will be implemented next.'
+      'Custom component modals will be implemented next.',
     );
   };
 

@@ -17,18 +17,18 @@ module('Unit | Service | notifications', function (hooks) {
     assert.strictEqual(
       service.notifications.length,
       1,
-      'One notification added'
+      'One notification added',
     );
     assert.strictEqual(
       notification.message,
       'Test message',
-      'Message is correct'
+      'Message is correct',
     );
     assert.strictEqual(notification.type, 'info', 'Default type is info');
     assert.strictEqual(
       notification.duration,
       5000,
-      'Default duration is 5000ms'
+      'Default duration is 5000ms',
     );
     assert.true(notification.dismissible, 'Default dismissible is true');
   });
@@ -42,7 +42,7 @@ module('Unit | Service | notifications', function (hooks) {
     assert.strictEqual(
       notification.message,
       'Success message',
-      'Message is correct'
+      'Message is correct',
     );
   });
 
@@ -55,7 +55,7 @@ module('Unit | Service | notifications', function (hooks) {
     assert.strictEqual(
       notification.message,
       'Error message',
-      'Message is correct'
+      'Message is correct',
     );
   });
 
@@ -68,7 +68,7 @@ module('Unit | Service | notifications', function (hooks) {
     assert.strictEqual(
       notification.message,
       'Warning message',
-      'Message is correct'
+      'Message is correct',
     );
   });
 
@@ -81,7 +81,7 @@ module('Unit | Service | notifications', function (hooks) {
     assert.strictEqual(
       notification.message,
       'Info message',
-      'Message is correct'
+      'Message is correct',
     );
   });
 
@@ -95,7 +95,7 @@ module('Unit | Service | notifications', function (hooks) {
     assert.strictEqual(
       notification.description,
       'Detailed description',
-      'Description is set'
+      'Description is set',
     );
   });
 
@@ -134,14 +134,14 @@ module('Unit | Service | notifications', function (hooks) {
     assert.strictEqual(
       service.notifications.length,
       3,
-      'Three notifications added'
+      'Three notifications added',
     );
 
     service.clear();
     assert.strictEqual(
       service.notifications.length,
       0,
-      'All notifications cleared'
+      'All notifications cleared',
     );
   });
 
@@ -157,12 +157,12 @@ module('Unit | Service | notifications', function (hooks) {
     assert.strictEqual(
       service.notifications.length,
       3,
-      'Only 3 notifications present'
+      'Only 3 notifications present',
     );
     assert.strictEqual(
       service.notifications[0]?.message,
       'Second',
-      'Oldest notification was removed'
+      'Oldest notification was removed',
     );
   });
 
@@ -178,17 +178,17 @@ module('Unit | Service | notifications', function (hooks) {
     assert.strictEqual(
       service.config.maxNotifications,
       10,
-      'Max notifications configured'
+      'Max notifications configured',
     );
     assert.strictEqual(
       service.config.defaultDuration,
       3000,
-      'Default duration configured'
+      'Default duration configured',
     );
     assert.strictEqual(
       service.config.position,
       'bottom-center',
-      'Position configured'
+      'Position configured',
     );
   });
 

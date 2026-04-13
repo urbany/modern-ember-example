@@ -27,7 +27,7 @@ module('Integration | Component | notification-item', function (hooks) {
           @notification={{notification}}
           @onDismiss={{onDismiss}}
         />
-      </template>
+      </template>,
     );
 
     assert.dom('[role="alert"]').exists('Alert is rendered');
@@ -53,7 +53,7 @@ module('Integration | Component | notification-item', function (hooks) {
     await render(
       <template>
         <NotificationItem @notification={{notification}} @onDismiss={{noop}} />
-      </template>
+      </template>,
     );
 
     assert.dom('.alert-error').exists('Has error class');
@@ -74,7 +74,7 @@ module('Integration | Component | notification-item', function (hooks) {
     await render(
       <template>
         <NotificationItem @notification={{notification}} @onDismiss={{noop}} />
-      </template>
+      </template>,
     );
 
     assert.dom('.alert-warning').exists('Has warning class');
@@ -95,7 +95,7 @@ module('Integration | Component | notification-item', function (hooks) {
     await render(
       <template>
         <NotificationItem @notification={{notification}} @onDismiss={{noop}} />
-      </template>
+      </template>,
     );
 
     assert.dom('.alert-info').exists('Has info class');
@@ -117,7 +117,7 @@ module('Integration | Component | notification-item', function (hooks) {
     await render(
       <template>
         <NotificationItem @notification={{notification}} @onDismiss={{noop}} />
-      </template>
+      </template>,
     );
 
     assert.dom('.font-semibold').hasText('Title', 'Title is displayed');
@@ -141,7 +141,7 @@ module('Integration | Component | notification-item', function (hooks) {
     await render(
       <template>
         <NotificationItem @notification={{notification}} @onDismiss={{noop}} />
-      </template>
+      </template>,
     );
 
     assert.dom('button').doesNotExist('Dismiss button is not rendered');
@@ -168,14 +168,14 @@ module('Integration | Component | notification-item', function (hooks) {
           @notification={{notification}}
           @onDismiss={{onDismiss}}
         />
-      </template>
+      </template>,
     );
 
     await click('button');
     assert.strictEqual(
       dismissedId,
       'test-7',
-      'onDismiss was called with correct ID'
+      'onDismiss was called with correct ID',
     );
   });
 });

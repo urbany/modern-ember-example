@@ -40,7 +40,7 @@ function normalizeResponse(content: JsonApiDocument): JsonApiDocument {
 }
 
 function normalizeResource(
-  rawResource: ExistingResourceObject
+  rawResource: ExistingResourceObject,
 ): ExistingResourceObject {
   rawResource.type = dasherize(singularize(rawResource.type));
   rawResource.attributes = camelCaseKeys(rawResource.attributes);

@@ -25,7 +25,7 @@ module('Unit | Utility | local-storage', function (hooks) {
       assert.strictEqual(
         result,
         'test-value',
-        'retrieved value matches set value'
+        'retrieved value matches set value',
       );
     });
 
@@ -93,7 +93,7 @@ module('Unit | Utility | local-storage', function (hooks) {
 
       const storage = new LocalStorageManager<User>(
         'test-user',
-        jsonSerializer<User>()
+        jsonSerializer<User>(),
       );
 
       const user: User = { name: 'John', age: 30 };
@@ -106,7 +106,7 @@ module('Unit | Utility | local-storage', function (hooks) {
     test('it can set and get arrays', function (assert) {
       const storage = new LocalStorageManager<string[]>(
         'test-array',
-        jsonSerializer<string[]>()
+        jsonSerializer<string[]>(),
       );
 
       const items = ['a', 'b', 'c'];
@@ -124,7 +124,7 @@ module('Unit | Utility | local-storage', function (hooks) {
 
       const storage = new LocalStorageManager<ComplexObject>(
         'test-complex',
-        jsonSerializer<ComplexObject>()
+        jsonSerializer<ComplexObject>(),
       );
 
       const obj: ComplexObject = {
@@ -141,7 +141,7 @@ module('Unit | Utility | local-storage', function (hooks) {
     test('it returns null for invalid JSON', function (assert) {
       const storage = new LocalStorageManager<{ name: string }>(
         'test-invalid',
-        jsonSerializer<{ name: string }>()
+        jsonSerializer<{ name: string }>(),
       );
 
       // Manually set invalid JSON

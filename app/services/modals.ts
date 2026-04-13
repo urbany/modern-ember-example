@@ -98,7 +98,7 @@ export default class Modals extends Service {
         confirmText: options.confirmText ?? this.config.confirmText,
         cancelText: options.cancelText ?? this.config.cancelText,
       },
-      { confirmValue, cancelValue }
+      { confirmValue, cancelValue },
     );
   }
 
@@ -170,7 +170,7 @@ export default class Modals extends Service {
     options: ModalOptions<T>,
     overrides: Partial<
       Pick<ResolverEntry<T>, 'confirmValue' | 'cancelValue'>
-    > = {}
+    > = {},
   ): Promise<T> {
     return new Promise<T>((resolve, reject) => {
       const id = this.generateId();

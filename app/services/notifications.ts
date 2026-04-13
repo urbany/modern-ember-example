@@ -111,7 +111,7 @@ export default class Notifications extends Service {
    */
   success(
     message: string,
-    options: Omit<NotificationOptions, 'type'> = {}
+    options: Omit<NotificationOptions, 'type'> = {},
   ): Notification {
     return this.add(message, { ...options, type: 'success' });
   }
@@ -121,7 +121,7 @@ export default class Notifications extends Service {
    */
   error(
     message: string,
-    options: Omit<NotificationOptions, 'type'> = {}
+    options: Omit<NotificationOptions, 'type'> = {},
   ): Notification {
     return this.add(message, { ...options, type: 'error' });
   }
@@ -131,7 +131,7 @@ export default class Notifications extends Service {
    */
   warning(
     message: string,
-    options: Omit<NotificationOptions, 'type'> = {}
+    options: Omit<NotificationOptions, 'type'> = {},
   ): Notification {
     return this.add(message, { ...options, type: 'warning' });
   }
@@ -141,7 +141,7 @@ export default class Notifications extends Service {
    */
   info(
     message: string,
-    options: Omit<NotificationOptions, 'type'> = {}
+    options: Omit<NotificationOptions, 'type'> = {},
   ): Notification {
     return this.add(message, { ...options, type: 'info' });
   }
@@ -151,7 +151,7 @@ export default class Notifications extends Service {
    */
   remove(id: string): void {
     const index = this.notifications.findIndex(
-      (n: Notification) => n.id === id
+      (n: Notification) => n.id === id,
     );
     if (index !== -1) {
       this.notifications.splice(index, 1);

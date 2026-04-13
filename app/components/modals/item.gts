@@ -37,7 +37,7 @@ export default class ModalItem extends Component<ModalItemSignature> {
 
     return tw(
       'modal-box bg-base-100 w-full rounded-lg p-6 shadow-xl',
-      sizeClasses[this.args.modal.size]
+      sizeClasses[this.args.modal.size],
     );
   }
 

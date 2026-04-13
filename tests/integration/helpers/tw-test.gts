@@ -10,7 +10,7 @@ module('Integration | Helper | tw', function (hooks) {
     await render(
       <template>
         <div class={{tw "px-2 py-1" "px-4"}}></div>
-      </template>
+      </template>,
     );
 
     assert.dom('div').hasClass('px-4');
@@ -22,7 +22,7 @@ module('Integration | Helper | tw', function (hooks) {
     await render(
       <template>
         <div class={{tw "bg-red-500 text-white" "bg-blue-500"}}></div>
-      </template>
+      </template>,
     );
 
     assert.dom('div').hasClass('bg-blue-500');
@@ -34,7 +34,7 @@ module('Integration | Helper | tw', function (hooks) {
     await render(
       <template>
         <div class={{tw "bg-gray-100" "bg-blue-500"}}></div>
-      </template>
+      </template>,
     );
 
     assert.dom('div').hasClass('bg-blue-500');
@@ -45,7 +45,7 @@ module('Integration | Helper | tw', function (hooks) {
     await render(
       <template>
         <div class={{tw "bg-gray-100"}}></div>
-      </template>
+      </template>,
     );
 
     assert.dom('div').hasClass('bg-gray-100');

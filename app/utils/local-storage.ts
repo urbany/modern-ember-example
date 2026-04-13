@@ -16,7 +16,7 @@ export class LocalStorageManager<T = string> {
     private readonly serializer?: {
       serialize: (value: T) => string;
       deserialize: (value: string) => T;
-    }
+    },
   ) {}
 
   /**

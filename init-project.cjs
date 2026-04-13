@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 /**
  * Project Initialization Script
  *
@@ -32,6 +30,14 @@ const path = require('path');
 const { execSync } = require('child_process');
 const readline = require('readline');
 
+// Custom error class for controlled process exit without printing a fatal error message
+class ExitError extends Error {
+  constructor(code) {
+    super('');
+    this.exitCode = code;
+  }
+}
+
 // ANSI color codes
 const colors = {
   reset: '\x1b[0m',
@@ -46,7 +52,7 @@ const colors = {
 
 // Read current project info from package.json
 const packageJson = JSON.parse(
-  fs.readFileSync(path.join(__dirname, 'package.json'), 'utf8')
+  fs.readFileSync(path.join(__dirname, 'package.json'), 'utf8'),
 );
 const OLD_PROJECT_NAME = packageJson.name;
 const OLD_GITHUB_REPO = packageJson.repository?.url
@@ -96,7 +102,7 @@ class ProjectInitializer {
     const detailStr = detail ? ` ${colors.dim}(${detail})${colors.reset}` : '';
     this.log(
       `${prefix} ${action}: ${colors.cyan}${target}${colors.reset}${detailStr}`,
-      'green'
+      'green',
     );
     this.changes.push({ action, target, detail });
   }
@@ -130,7 +136,7 @@ class ProjectInitializer {
         (answer) => {
           rl.close();
           resolve(answer.trim() || defaultValue);
-        }
+        },
       );
     });
   }
@@ -168,7 +174,7 @@ class ProjectInitializer {
     // Check if we're in the project root
     if (!fs.existsSync(path.join(this.projectRoot, 'package.json'))) {
       this.error(
-        'package.json not found. Please run this script from the project root.'
+        'package.json not found. Please run this script from the project root.',
       );
       return false;
     }
@@ -187,7 +193,7 @@ class ProjectInitializer {
         if (gitStatus.trim()) {
           this.error('You have uncommitted changes in your git repository.');
           this.warn(
-            'Please commit or stash your changes before running this script.'
+            'Please commit or stash your changes before running this script.',
           );
           this.info('Or use --force flag to run anyway (not recommended).');
           return false;
@@ -203,7 +209,7 @@ class ProjectInitializer {
         execSync('pnpm --version', { stdio: 'ignore' });
       } catch {
         this.error(
-          'pnpm is not installed. Install it with: npm install -g pnpm'
+          'pnpm is not installed. Install it with: npm install -g pnpm',
         );
         this.warn('Or use --skip-install flag to skip dependency installation');
         return false;
@@ -262,7 +268,7 @@ class ProjectInitializer {
         this.logChange(
           'Updated',
           file,
-          `${OLD_PROJECT_NAME} → ${this.newProjectName}`
+          `${OLD_PROJECT_NAME} → ${this.newProjectName}`,
         );
       }
     }
@@ -287,25 +293,25 @@ class ProjectInitializer {
       fs.writeFileSync(
         packagePath,
         JSON.stringify(pkg, null, 2) + '\n',
-        'utf8'
+        'utf8',
       );
     }
 
     this.logChange(
       'Reset metadata',
       'package.json',
-      'version, description, author, repository, homepage'
+      'version, description, author, repository, homepage',
     );
   }
 
   renameWorkspaceFile() {
     const oldPath = path.join(
       this.projectRoot,
-      `${OLD_PROJECT_NAME}.code-workspace`
+      `${OLD_PROJECT_NAME}.code-workspace`,
     );
     const newPath = path.join(
       this.projectRoot,
-      `${this.newProjectName}.code-workspace`
+      `${this.newProjectName}.code-workspace`,
     );
 
     if (!fs.existsSync(oldPath)) {
@@ -320,7 +326,7 @@ class ProjectInitializer {
     this.logChange(
       'Renamed',
       `${OLD_PROJECT_NAME}.code-workspace`,
-      `→ ${this.newProjectName}.code-workspace`
+      `→ ${this.newProjectName}.code-workspace`,
     );
   }
 
@@ -345,7 +351,7 @@ class ProjectInitializer {
     this.logChange(
       'Replaced',
       'README.md',
-      'from template with project-specific content'
+      'from template with project-specific content',
     );
   }
 
@@ -370,7 +376,7 @@ class ProjectInitializer {
     this.logChange(
       'Replaced',
       'AGENTS.md',
-      'from template with project-specific content'
+      'from template with project-specific content',
     );
   }
 
@@ -393,13 +399,13 @@ For detailed project documentation, architecture, and development guidelines, pl
   replaceIndexFromTemplate() {
     const templatePath = path.join(
       this.projectRoot,
-      'app/templates/index.template.gts'
+      'app/templates/index.template.gts',
     );
     const indexPath = path.join(this.projectRoot, 'app/templates/index.gts');
 
     if (!fs.existsSync(templatePath)) {
       this.warn(
-        'app/templates/index.template.gts not found, skipping index.gts replacement'
+        'app/templates/index.template.gts not found, skipping index.gts replacement',
       );
       return;
     }
@@ -416,7 +422,7 @@ For detailed project documentation, architecture, and development guidelines, pl
     this.logChange(
       'Replaced',
       'app/templates/index.gts',
-      'from template with simple landing page'
+      'from template with simple landing page',
     );
 
     // Delete header component since it's been inlined into index.gts
@@ -428,7 +434,7 @@ For detailed project documentation, architecture, and development guidelines, pl
       this.logChange(
         'Deleted',
         'app/components/header.gts',
-        'inlined into index.gts'
+        'inlined into index.gts',
       );
     }
   }
@@ -436,16 +442,16 @@ For detailed project documentation, architecture, and development guidelines, pl
   replaceApplicationFromTemplate() {
     const templatePath = path.join(
       this.projectRoot,
-      'app/templates/application.template.gts'
+      'app/templates/application.template.gts',
     );
     const applicationPath = path.join(
       this.projectRoot,
-      'app/templates/application.gts'
+      'app/templates/application.gts',
     );
 
     if (!fs.existsSync(templatePath)) {
       this.warn(
-        'app/templates/application.template.gts not found, skipping application.gts replacement'
+        'app/templates/application.template.gts not found, skipping application.gts replacement',
       );
       return;
     }
@@ -462,7 +468,7 @@ For detailed project documentation, architecture, and development guidelines, pl
     this.logChange(
       'Replaced',
       'app/templates/application.gts',
-      'from template without demo containers'
+      'from template without demo containers',
     );
   }
 
@@ -605,7 +611,7 @@ For detailed project documentation, architecture, and development guidelines, pl
         ? ` ${colors.dim}(${change.detail})${colors.reset}`
         : '';
       console.log(
-        `  ${colors.green}${change.action}${colors.reset}: ${colors.cyan}${change.target}${colors.reset}${detailStr}`
+        `  ${colors.green}${change.action}${colors.reset}: ${colors.cyan}${change.target}${colors.reset}${detailStr}`,
       );
     }
 
@@ -617,12 +623,12 @@ For detailed project documentation, architecture, and development guidelines, pl
     console.log();
     this.log(
       '══════════════════════════════════════════════════════════',
-      'bright'
+      'bright',
     );
     this.log('         Project Initialization Script', 'bright');
     this.log(
       '══════════════════════════════════════════════════════════',
-      'bright'
+      'bright',
     );
     console.log();
 
@@ -636,24 +642,24 @@ For detailed project documentation, architecture, and development guidelines, pl
       this.newProjectName = await this.prompt('Enter new project name');
       this.keepGit = await this.promptYesNo(
         'Keep existing .git directory?',
-        false
+        false,
       );
       if (!this.keepGit) {
         this.initGit = await this.promptYesNo(
           'Initialize new git repository?',
-          true
+          true,
         );
       }
       this.skipInstall = !(await this.promptYesNo(
         'Install dependencies with pnpm?',
-        true
+        true,
       ));
       console.log();
     }
 
     // Check prerequisites
     if (!this.checkPrerequisites()) {
-      process.exit(1);
+      throw new ExitError(1);
     }
 
     console.log();
@@ -696,7 +702,7 @@ For detailed project documentation, architecture, and development guidelines, pl
       this.log('Next Steps:', 'bright');
       console.log();
       this.info(
-        '1. Update package.json with your author, description, and repository info'
+        '1. Update package.json with your author, description, and repository info',
       );
       this.info('2. Review and update README.md with your project details');
       this.info('3. Review and update AGENTS.md if needed');
@@ -732,7 +738,7 @@ function parseArgs() {
 
     if (arg === '--help' || arg === '-h') {
       printHelp();
-      process.exit(0);
+      throw new ExitError(0);
     } else if (arg === '--dry-run') {
       options.dryRun = true;
     } else if (arg === '--keep-git') {
@@ -750,7 +756,7 @@ function parseArgs() {
     } else {
       console.error(`${colors.red}Unknown argument: ${arg}${colors.reset}`);
       printHelp();
-      process.exit(1);
+      throw new ExitError(1);
     }
   }
 
@@ -798,10 +804,10 @@ async function main() {
 
   if (!options.interactive && !options.projectName) {
     console.error(
-      `${colors.red}Error: Project name is required${colors.reset}\n`
+      `${colors.red}Error: Project name is required${colors.reset}\n`,
     );
     printHelp();
-    process.exit(1);
+    throw new ExitError(1);
   }
 
   const initializer = new ProjectInitializer(options);
@@ -809,6 +815,10 @@ async function main() {
 }
 
 main().catch((error) => {
-  console.error(`${colors.red}Fatal error: ${error.message}${colors.reset}`);
-  process.exit(1);
+  if (error instanceof ExitError) {
+    process.exitCode = error.exitCode;
+  } else {
+    console.error(`${colors.red}Fatal error: ${error.message}${colors.reset}`);
+    process.exitCode = 1;
+  }
 });

@@ -22,7 +22,7 @@ module('Unit | Utility | camel-case-keys', function () {
           userAge: 30,
           isActive: true,
         },
-        'transforms snake_case keys to camelCase'
+        'transforms snake_case keys to camelCase',
       );
     });
 
@@ -42,7 +42,7 @@ module('Unit | Utility | camel-case-keys', function () {
           userAge: 25,
           isActive: false,
         },
-        'transforms kebab-case keys to camelCase'
+        'transforms kebab-case keys to camelCase',
       );
     });
 
@@ -83,7 +83,7 @@ module('Unit | Utility | camel-case-keys', function () {
             },
           },
         } as any,
-        'recursively transforms nested objects'
+        'recursively transforms nested objects',
       );
     });
 
@@ -111,7 +111,7 @@ module('Unit | Utility | camel-case-keys', function () {
           { userName: 'John', userAge: 30 },
           { userName: 'Jane', userAge: 25 },
         ] as any,
-        'transforms each object in array'
+        'transforms each object in array',
       );
     });
 
@@ -133,7 +133,7 @@ module('Unit | Utility | camel-case-keys', function () {
             { firstName: 'Bob', lastName: 'Jones' },
           ],
         } as any,
-        'transforms nested arrays'
+        'transforms nested arrays',
       );
     });
 
@@ -245,7 +245,7 @@ module('Unit | Utility | camel-case-keys', function () {
           createdAt: date,
           userName: 'John',
         } as any,
-        'transforms keys but preserves Date values'
+        'transforms keys but preserves Date values',
       );
       assert.ok(result.createdAt instanceof Date, 'Date value is preserved');
     });
@@ -288,7 +288,7 @@ module('Unit | Utility | camel-case-keys', function () {
             },
           },
         } as any,
-        'handles complex nested structures'
+        'handles complex nested structures',
       );
     });
 
@@ -308,7 +308,7 @@ module('Unit | Utility | camel-case-keys', function () {
           middleName: null,
           nickname: undefined,
         } as any,
-        'preserves null and undefined values'
+        'preserves null and undefined values',
       );
     });
 
@@ -334,7 +334,7 @@ module('Unit | Utility | camel-case-keys', function () {
           arrayValue: [1, 2, 3],
           objectValue: { nestedKey: 'value' },
         } as any,
-        'handles mixed value types correctly'
+        'handles mixed value types correctly',
       );
     });
   });
