@@ -99,7 +99,7 @@
     "eslint-plugin-warp-drive": "^5.8.1",
     "globals": "^17.5.0",
     "lint-staged": "^16.4.0",
-    "prettier": "^3.8.2",
+    "prettier": "^3.8.3",
     "prettier-plugin-ember-template-tag": "^2.1.4",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "qunit": "^2.25.0",
